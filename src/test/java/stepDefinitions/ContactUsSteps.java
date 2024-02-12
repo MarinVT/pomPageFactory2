@@ -20,10 +20,12 @@ public class ContactUsSteps extends BasePage {
     public void user_is_on_the_homepage2(String url) {
         contactUsPage.navigateToSiteURL(url);
     }
+
     @And("User clicks on link Contact us")
     public void user_clicks_on_link_contact_us() {
         homepage.openContactUsPage();
     }
+
     @And("User sees the section {string}")
     public void user_sees_the_section(String expectedTextConnectionWithUs) {
         contactUsPage.getConnectionWithUsTextContactUsPage(expectedTextConnectionWithUs);
