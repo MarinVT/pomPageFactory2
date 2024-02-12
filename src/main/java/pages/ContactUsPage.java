@@ -17,7 +17,7 @@ public class ContactUsPage extends BasePage {
     By companyText = By.xpath("//h2[contains(.,'Връзка с Нас')]");
 
     // Add selectors here
-
+    // Test comment new branch
 
     // Add more methods to enter data in all fields
 
