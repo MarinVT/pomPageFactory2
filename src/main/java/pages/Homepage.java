@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 import pageObjects.BasePage;
 
 import java.util.List;
@@ -48,6 +49,12 @@ public class Homepage extends BasePage {
     // Homepage logo company locator
     By homepageLogoEcometalLTD = By.xpath("//img[@src='https://ecometal.bg/wp-content/uploads/2021/03/logo-ecometal.png']");
 
+    // Homepage phone number locator in the right upper corner
+    By homepagePhoneNumber = By.xpath("//div[@class='contact-number'][contains(.,'Позвънете Ни0885 771 777')]");
+    private @FindBy(xpath = "(//strong[contains(.,'0885 771 777')])[1]")
+    WebElement homepagePhoneNumberLocatorWebelement;
+
+
     @FindBy(xpath = "/html/body/div[1]/header/div[3]/div/div[2]/nav/div[2]/ul/li[1]")
     private WebElement aboutUsLinkHomepageTopOfPageWebElement;
 
@@ -58,6 +65,7 @@ public class Homepage extends BasePage {
         navigateToSiteURL(url);
     }
 
+    // Return title
     public String getHomePageTitle(String actualPageTitle) {
         return getDriver().getTitle();
     }
@@ -88,8 +96,15 @@ public class Homepage extends BasePage {
         waitAndClickOnElement(giveMePriceButtonHomepageLocator);
     }
 
+    // Takes homepage logo of the company
     public void getHomepageCompanyLogo() {
         waitVisibilityOfElementLocatedBy(homepageLogoEcometalLTD);
+    }
+
+    // Takes homepage phone number of the company
+    public void getHomepagePhoneNumberListed(String expectedResult) {
+        waitVisibilityOfEWebelement(homepagePhoneNumberLocatorWebelement);
+        Assert.assertEquals(homepagePhoneNumberLocatorWebelement.getText(), expectedResult);
     }
 
     // Homepage search car input fields end part
@@ -114,4 +129,6 @@ public class Homepage extends BasePage {
         findWebElementByLocator(contactUsLinkHomepageTopOfPage).click();
         return new ContactUsPage();
     }
+
+
 }
