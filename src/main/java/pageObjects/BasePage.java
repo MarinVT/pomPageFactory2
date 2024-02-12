@@ -50,10 +50,16 @@ public class BasePage {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).sendKeys(stringToEnter);
     }
 
-    //Wait Wrapper Method taken from - https://www.swtestacademy.com/page-object-model-java/
+    //Wait Wrapper Method using BY by - https://www.swtestacademy.com/page-object-model-java/
     public void waitVisibilityOfElementLocatedBy(By elementBy) {
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(elementBy));
+    }
+
+    //Wait Wrapper Method for WEBELEMENT
+    public void waitVisibilityOfEWebelement(WebElement webElement) {
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
     //CLICK METHOD USING WEBELEMENT
