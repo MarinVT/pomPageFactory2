@@ -40,9 +40,13 @@ public class Homepage extends BasePage {
     @FindBy(xpath = "//p[contains(.,'Грешка:')]")
     private WebElement errorMessageLocator;
 
+    // White header links locators
     // Locator of About Us page on the homepage in the main section with links on the top
     By aboutUsLinkHomepageTopOfPage = By.linkText("За Нас");
+    // Contacts Locator
     By contactUsLinkHomepageTopOfPage = By.linkText("Контакти");
+    // Homepage logo company locator
+    By homepageLogoEcometalLTD = By.xpath("//img[@src='https://ecometal.bg/wp-content/uploads/2021/03/logo-ecometal.png']");
 
     @FindBy(xpath = "/html/body/div[1]/header/div[3]/div/div[2]/nav/div[2]/ul/li[1]")
     private WebElement aboutUsLinkHomepageTopOfPageWebElement;
@@ -83,6 +87,11 @@ public class Homepage extends BasePage {
 //        giveMePriceButtonHomepageLocator.click();
         waitAndClickOnElement(giveMePriceButtonHomepageLocator);
     }
+
+    public void getHomepageCompanyLogo() {
+        waitVisibilityOfElementLocatedBy(homepageLogoEcometalLTD);
+    }
+
     // Homepage search car input fields end part
 
     // HELPER METHODS

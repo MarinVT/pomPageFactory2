@@ -14,7 +14,7 @@ public class ContactUsPage extends BasePage {
     @FindBy(xpath = "//h2[contains(.,'Връзка с Нас')]")
     private WebElement textConnectionWithUs;
 
-    By companyText = By.xpath("//h2[contains(.,'Връзка с Нас2222')]");
+    By companyText = By.xpath("//h2[contains(.,'Връзка с Нас')]");
 
     // Add selectors here
     // Test comment new branch
