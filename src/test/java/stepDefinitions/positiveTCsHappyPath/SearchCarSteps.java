@@ -1,14 +1,11 @@
-package stepDefinitions;
+package stepDefinitions.positiveTCsHappyPath;
 
 import BaseTest.BaseTest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebDriver;
 import pages.Homepage;
 import pages.SearchCarPage;
-
-import static SeleniumDriver.DriverFactory.getDriver;
 
 public class SearchCarSteps extends BaseTest {
 

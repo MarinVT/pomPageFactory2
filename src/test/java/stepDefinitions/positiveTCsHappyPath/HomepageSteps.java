@@ -1,4 +1,4 @@
-package stepDefinitions;
+package stepDefinitions.positiveTCsHappyPath;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

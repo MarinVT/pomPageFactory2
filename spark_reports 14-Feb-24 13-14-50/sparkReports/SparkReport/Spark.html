@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb 12, 2024 03:48:07 PM</span></a>
+<a href="#"><span class="badge badge-primary">Feb 14, 2024 01:14:50 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,13 +66,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb 12, 2024 03:48:07 PM</h3>
+<h3>Feb 14, 2024 01:14:50 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb 12, 2024 03:48:09 PM</h3>
+<h3>Feb 14, 2024 01:15:16 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -143,7 +143,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>6</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -162,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Homepage company Phone number":1.688
+"Contact us page required field NAME":26.472
 };
 </script>
 <div class="row">
@@ -172,7 +172,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@UI2</td>
+<td>@functional5</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -225,7 +225,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 2,
+passGrandChild: 6,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -250,7 +250,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@UI2</a>
+<a class="dropdown-item" href="#">@functional5</a>
 </ul>
 </li>
 </ul>
@@ -261,9 +261,9 @@ eventsCount: 5,
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Homepage company Phone number</p>
+            <p class="name">Contact us page required field NAME</p>
             <p class="text-sm">
-              <span>3:48:07 PM</span> / <span>00:00:01:688</span>
+              <span>1:14:50 PM</span> / <span>00:00:26:472</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -271,10 +271,10 @@ eventsCount: 5,
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Homepage company Phone number</h5>
-<span class='badge badge-success'>02.12.2024 3:48:07 PM</span>
-<span class='badge badge-danger'>02.12.2024 3:48:09 PM</span>
-<span class='badge badge-default'>00:00:01:688</span>
+<h5 class="test-status text-pass">Contact us page required field NAME</h5>
+<span class='badge badge-success'>02.14.2024 1:14:50 PM</span>
+<span class='badge badge-danger'>02.14.2024 1:15:16 PM</span>
+<span class='badge badge-default'>00:00:26:472</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -286,18 +286,38 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Validate homepage phone number is listed in the right corner of the page</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User sees warning text for empty required field NAME</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="stepDefinitions.HomepageGetPhoneNumberSteps.user_opens_the_following_url_to_see_the_phone_number(java.lang.String)">
-                <span>Given User opens the following url to see the phone number "https://ecometal.bg/"</span>
+              <div class="step pass-bg" title="stepDefinitions.negativeTCs.ContactUsTCs.ContactUsRequiredFieldName.user_opens_this_address_to_reach_the_contact_us_page(java.lang.String)">
+                <span>Given User opens this address "https://ecometal.bg/" to reach the contact us page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.HomepageGetPhoneNumberSteps.user_sees_the_phonen_number_of_the_company_listed_successfully(java.lang.String)">
-                <span>And User sees the phonen number of the company listed successfully "0885 771 777"</span>
+              <div class="step pass-bg" title="stepDefinitions.negativeTCs.ContactUsTCs.ContactUsRequiredFieldName.user_clicks_on_contact_us_white_section_located_in_front_of_the_phone_number()">
+                <span>And User clicks on Contact us white section  located in front of the phone number</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.negativeTCs.ContactUsTCs.ContactUsRequiredFieldName.user_does_not_enter_name_in_name_input_field()">
+                <span>And User does not enter name in name input field</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.negativeTCs.ContactUsTCs.ContactUsRequiredFieldName.user_enters_the_following_email_in_next_field_email(java.lang.String)">
+                <span>And User enters the following email "amador@abv.bg" in next field email</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.negativeTCs.ContactUsTCs.ContactUsRequiredFieldName.user_enters_town_in_town_input_field2(java.lang.String)">
+                <span>And User enters town "София" in town input field2</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.negativeTCs.ContactUsTCs.ContactUsRequiredFieldName.user_sees_in_red_text_with_the_following_under_name_input_field(java.lang.String)">
+                <span>Then User sees in red text with the following "Това поле е задължително." under Name input field</span>
       <div>
       </div>
               </div>
@@ -329,12 +349,12 @@ eventsCount: 5,
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@UI2</p>
+<p class="name">@functional5</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@UI2</h4>
+<h4>@functional5</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -348,11 +368,11 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>15:48:07 PM</td>
+<td>13:14:50 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Validate homepage phone number is listed in the right corner of the page</a>
+<a href="#" class="linked" test-id='1' id='2'>User sees warning text for empty required field NAME</a>
 <div class="">
-<span class="badge badge-default">Homepage company Phone number.Validate homepage phone number is listed in the right corner of the page</span>
+<span class="badge badge-default">Contact us page required field NAME.User sees warning text for empty required field NAME</span>
 </div>
 </td>
 </tr>

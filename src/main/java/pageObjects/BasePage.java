@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class BasePage {
 
 //    public static WebDriver driver;
-    public WebDriverWait wait;
+//    public WebDriverWait wait;
 
     public BasePage() {
         PageFactory.initElements(getDriver(), this);
@@ -51,9 +51,9 @@ public class BasePage {
     }
 
     //Wait Wrapper Method using BY by - https://www.swtestacademy.com/page-object-model-java/
-    public void waitVisibilityOfElementLocatedBy(By elementBy) {
+    public void waitVisibilityOfElementLocatedBy(By by) {
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(elementBy));
+        webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
     }
 
     //Wait Wrapper Method for WEBELEMENT
@@ -72,6 +72,12 @@ public class BasePage {
     public void waitAndClickOnElement(WebElement webElement) {
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
+    }
+
+    // Check that is element present
+    public boolean waitAndIsElementDisplay(By by) {
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        return webDriverWait.until(ExpectedConditions.elementToBeClickable(by)).isDisplayed();
     }
 
 
