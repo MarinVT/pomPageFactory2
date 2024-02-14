@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@UI2",
+        tags = "@functional5",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,

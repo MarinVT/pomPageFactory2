@@ -1,8 +1,7 @@
-package stepDefinitions;
+package stepDefinitions.positiveTCsHappyPath.homepageTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import org.testng.Assert;
 import pages.Homepage;
 
 public class HomepageGetPhoneNumberSteps {

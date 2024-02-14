@@ -1,9 +1,7 @@
-package stepDefinitions;
+package stepDefinitions.positiveTCsHappyPath.aboutUsTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import org.testng.Assert;
 import pages.AboutUsPage;
 import pages.Homepage;
 
