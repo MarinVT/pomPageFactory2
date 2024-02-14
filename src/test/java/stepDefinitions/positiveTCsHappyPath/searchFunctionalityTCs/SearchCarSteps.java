@@ -1,4 +1,4 @@
-package stepDefinitions.positiveTCsHappyPath;
+package stepDefinitions.positiveTCsHappyPath.searchFunctionalityTCs;
 
 import BaseTest.BaseTest;
 import io.cucumber.java.en.And;

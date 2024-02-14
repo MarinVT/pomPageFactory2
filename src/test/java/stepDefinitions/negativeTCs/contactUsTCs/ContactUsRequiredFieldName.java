@@ -1,8 +1,7 @@
-package stepDefinitions.negativeTCs.ContactUsTCs;
+package stepDefinitions.negativeTCs.contactUsTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import org.testng.Assert;
 import pages.ContactUsPage;
 import pages.Homepage;

@@ -1,4 +1,4 @@
-package stepDefinitions.positiveTCsHappyPath.ContactUsTCs;
+package stepDefinitions.positiveTCsHappyPath.contactUsTCs;
 
 import BaseTest.BaseTest;
 import io.cucumber.java.en.And;
