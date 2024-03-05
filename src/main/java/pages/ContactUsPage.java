@@ -30,7 +30,7 @@ public class ContactUsPage extends BasePage {
 
     // Add more methods to enter data in all fields
     public void getConnectionWithUsTextContactUsPage(String title) {
-        assertEqualsByElementExpectedText(companyText, title);
+        assertEqualsByElementExpectedTextUsingBy(companyText, title);
     }
 
     // Enter methods for Name, Email, Town, Phone, Message input fields
@@ -38,33 +38,38 @@ public class ContactUsPage extends BasePage {
     public void enterName(String name) {
         sendKeysLocatedByEnterString(nameInputField, name);
     }
+
     // Enter method for EMAIL
     public void enterEmail(String email) {
+
         sendKeysLocatedByEnterString(emailInputField, email);
     }
+
     // Enter method for TOWN
     public void enterTown(String town) {
         sendKeysLocatedByEnterString(townInputField, town);
     }
+
     // Enter method for TOWN
     public void enterPhone(String phoneNumber) {
         sendKeysLocatedByEnterString(phoneInputField, phoneNumber);
     }
+
     // Enter method for MESSAGE container
     public void enterTextMessageContainer(String text) {
         sendKeysLocatedByEnterString(messageContainerInputField, text);
     }
+
     // SUBMIT button click method
     public void submitFormButtonIsListed() {
         waitVisibilityOfElementLocatedBy(submitButtonSend);
     }
+
     // Required field NAME Това поле е задължително.
     public String getTextRequiredFieldNameNotAdded() {
         return readText(nameRequiredFieldLocator);
     }
-    // Is element display
-    public boolean isNameInputFieldListed() {
-        return waitAndIsElementDisplay(nameInputField);
-    }
+
+
 
 }

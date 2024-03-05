@@ -17,11 +17,11 @@ public class AboutUsPage extends BasePage {
     By companyText = By.xpath("//span[contains(.,'Ecometal Engineering Ltd.')]");
 
    public void getTextAboutUsWelcome(String expectedText) {
-       assertEqualsByElementExpectedText(companyText, expectedText);
+       assertEqualsByElementExpectedTextUsingBy(companyText, expectedText);
    }
 
    public void getWelcomeTextAboutUsPage(String title) {
-       assertEqualsByElementExpectedText(companyText, title);
+       assertEqualsByElementExpectedTextUsingBy(companyText, title);
    }
 
 }

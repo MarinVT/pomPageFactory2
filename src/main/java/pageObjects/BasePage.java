@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import utils.Global_Vars;
 
 import java.time.Duration;
 import java.util.List;
@@ -35,31 +36,39 @@ public class BasePage {
 
     //  FIND METHOD
     public WebElement findWebElementByLocator(By locator) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(locator));
         return getDriver().findElement(locator);
     }
     // SENDKEYS CUSTOM METHOD USING BY AND ENTER TEXT
     public void sendKeysLocatedByEnterString(By by, String stringToEnter) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(stringToEnter);
     }
     // SENDKEYS VIA WEBELEMENT AND STRING TO BE ENTERED
     public void sendKeysViaWebElementAndEnterString(WebElement webElement, String stringToEnter) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).sendKeys(stringToEnter);
     }
 
     //Wait Wrapper Method using BY by - https://www.swtestacademy.com/page-object-model-java/
     public void waitVisibilityOfElementLocatedBy(By by) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
     }
 
     //Wait Wrapper Method for WEBELEMENT
-    public void waitVisibilityOfEWebelement(WebElement webElement) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+    public void waitVisibilityOfEWebElement(WebElement webElement) {
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
+    }
+
+    public void waitCustomMethod(long time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     //CLICK METHOD USING WEBELEMENT
@@ -70,14 +79,8 @@ public class BasePage {
 
     //CLICK METHOD USING BY
     public void waitAndClickOnElement(WebElement webElement) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
-    }
-
-    // Check that is element present
-    public boolean waitAndIsElementDisplay(By by) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        return webDriverWait.until(ExpectedConditions.elementToBeClickable(by)).isDisplayed();
     }
 
 
@@ -110,10 +113,22 @@ public class BasePage {
         return getDriver().findElement(by).getText();
     }
 
-    //ASSERT METHOD
-    public void assertEqualsByElementExpectedText (By elementBy, String expectedText) {
+    // Method returns webElement
+    public String readTextWebElement(WebElement webElement) {
+        return webElement.getText();
+    }
+
+    //ASSERT METHOD using By by
+    public void assertEqualsByElementExpectedTextUsingBy(By elementBy, String expectedText) {
         waitVisibilityOfElementLocatedBy(elementBy);
         Assert.assertEquals(readText(elementBy), expectedText);
+        System.out.println("Main text is: " + expectedText);
+    }
+
+    //ASSERT METHOD using WebElement
+    public void assertEqualsByElementExpectedTextWebElement (WebElement webElement, String expectedText) {
+        waitVisibilityOfEWebElement(webElement);
+        Assert.assertEquals(readTextWebElement(webElement), expectedText);
         System.out.println("Main text is: " + expectedText);
     }
 
@@ -149,7 +164,7 @@ public class BasePage {
     List<String> takeAllValues2 = getValues(elements(Webelement, e -> e.getAttribute("href"))
     List<String> takeAllValues3 getValues(elements(Webelement, Webelement::getTagName)
      */
-    public List<String> getValues(List<WebElement> elements, Function<WebElement, String> function) {
+    public List<String> getValuesFromDropDown(List<WebElement> elements, Function<WebElement, String> function) {
         return elements.stream().map(function).collect(Collectors.toList());
     }
     /*

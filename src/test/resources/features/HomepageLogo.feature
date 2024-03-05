@@ -1,4 +1,4 @@
-@UI1
+
 Feature: Homepage company LOGO
 
   Scenario: Validate homepage logo is listed

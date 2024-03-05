@@ -1,4 +1,3 @@
-@UI
   Feature: Logo company on the homepage
 
     Scenario: User should be able to see the logo of the company AutoScout24

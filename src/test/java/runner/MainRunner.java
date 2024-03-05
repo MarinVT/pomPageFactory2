@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@functional5",
+        tags = "@functional",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,
@@ -15,3 +15,4 @@ import io.cucumber.testng.CucumberOptions;
 public class MainRunner extends AbstractTestNGCucumberTests {
 
 }
+
