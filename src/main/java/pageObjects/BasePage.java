@@ -134,12 +134,17 @@ public class BasePage {
 
     // VALIDATE CORRECT PAGE METHOD
     public void validateCorrectPage(String searchString) {
-        if (!getDriver().getTitle().contains(searchString)) {
+        if (getDriver().getTitle().contains(searchString.trim())) {
             throw new IllegalStateException(
                     "This is not "
                     + searchString + " .The actual Url is: "
                     + getDriver().getCurrentUrl());
         }
+    }
+
+    // GET CURRENT PAGE METHOD
+    public String getCurrentURL() {
+        return getDriver().getCurrentUrl();
     }
 
     // DROPDOWN METHOD SELECTION BY TEXT

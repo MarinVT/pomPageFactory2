@@ -33,9 +33,7 @@ public class GoToTopStoriesCategorySteps {
 
     @Then("User is navigated to Top Stories page")
     public void user_is_navigated_to_top_stories_page() {
-        homePage.waitCustomMethod(3000);
         categoryTopStoriesPage.categoryTitleIsListed();
-        homePage.waitCustomMethod(3000);
     }
 
 }

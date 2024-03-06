@@ -10,11 +10,20 @@ public class CategoryTopStoriesPage extends BasePage {
         super();
     }
 
+    String topStoriesUrl = "https://hotnews.bg/top-stories";
+
     @FindBy(xpath = "//strong[contains(.,'Top stories')]")
     private WebElement topStoriesCategoryTitleLocator;
 
     public void categoryTitleIsListed() {
         waitVisibilityOfEWebElement(topStoriesCategoryTitleLocator);
     }
+
+    // Validate correct Top Stories URL - https://hotnews.bg/top-stories
+    public String getTopStoriesCurrentPageURL() {
+        return getCurrentURL();
+    }
+
+
 
 }
