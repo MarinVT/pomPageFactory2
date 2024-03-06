@@ -1,14 +1,14 @@
-package stepDefinitions.positiveTCsHappyPath.homepageTCs;
+package stepDefinitions.testCases.homepageTCs.positiveTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pages.HomePage;
 
-public class HomepageGetListLastCreatedArticlesSteps {
+public class GetListLastCreatedArticlesSteps {
 
     private HomePage homePage;
 
-    public HomepageGetListLastCreatedArticlesSteps(HomePage homePage) {
+    public GetListLastCreatedArticlesSteps(HomePage homePage) {
         this.homePage = homePage;
     }
 

@@ -1,14 +1,14 @@
-package stepDefinitions.positiveTCsHappyPath.homepageTCs;
+package stepDefinitions.testCases.homepageTCs.positiveTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pages.HomePage;
 
-public class HomepageViewAllButtonListedSteps {
+public class GetViewAllButtonListedSteps {
 
     private HomePage homePage;
 
-    public HomepageViewAllButtonListedSteps(HomePage homePage) {
+    public GetViewAllButtonListedSteps(HomePage homePage) {
         this.homePage = homePage;
     }
 

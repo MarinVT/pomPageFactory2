@@ -1,14 +1,14 @@
-package stepDefinitions.positiveTCsHappyPath.homepageTCs;
+package stepDefinitions.testCases.homepageTCs.positiveTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pages.HomePage;
 
-public class ShareComponentSteps {
+public class VerifyShareComponentIsListedSteps {
 
     private HomePage homePage;
 
-    public ShareComponentSteps(HomePage homePage) {
+    public VerifyShareComponentIsListedSteps(HomePage homePage) {
         this.homePage = homePage;
     }
 

@@ -1,15 +1,15 @@
-package stepDefinitions.positiveTCsHappyPath.homepageTCs;
+package stepDefinitions.testCases.homepageTCs.positiveTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pages.HomePage;
 
-public class HomepageBullevardListSteps {
+public class GetBullevardListSteps {
 
     //Test
     private HomePage homePage;
 
-    public HomepageBullevardListSteps(HomePage homePage) {
+    public GetBullevardListSteps(HomePage homePage) {
         this.homePage = homePage;
     }
 

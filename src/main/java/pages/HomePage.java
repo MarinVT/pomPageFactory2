@@ -46,6 +46,18 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//input[contains(@placeholder,'Търси в hotNews')]")
     private WebElement inputSearchField;
 
+    // Logo homepage
+    @FindBy(xpath = "(//img[contains(@alt,'Hotnews.bg')])[1]")
+    private WebElement logoHotNews;
+
+    // Hamburger menu locator
+    @FindBy(xpath = "//img[@srcset='/image/icon/menu.svg?v=32&format=webp 1x, /image/icon/menu.svg?v=48&format=webp 2x']")
+    private WebElement hamburgerMenu;
+
+    // Top stories dropdown locator
+    @FindBy(xpath = "//*[@id=\"__next\"]/header/div/div[2]/ul/li[1]/a")
+    private WebElement topStoriesDropdown;
+
     @FindBy(id = "brand")
     private WebElement dropDownBrandCarLocator;
 
@@ -112,7 +124,6 @@ public class HomePage extends BasePage {
     }
 
     // Search functionality
-
     public void clickOnSearchIcon() {
         waitVisibilityOfEWebElement(searchIcon);
         searchIcon.click();
@@ -128,6 +139,30 @@ public class HomePage extends BasePage {
         waitAndClickOnElement(searchIcon);
         return new SearchPage();
     }
+
+    // Logo hotNews is clickable on the homepage
+    public HomePage clickOnLogo() {
+        waitAndClickOnElement(logoHotNews);
+        return new HomePage();
+    }
+
+    // Logo of hotNews is listed
+    public void logoIsListed() {
+        waitVisibilityOfEWebElement(logoHotNews);
+    }
+
+    // Click on top stories from dropdown menu
+
+    public void clickOnHamburgerMenu() {
+        waitAndClickOnElement(hamburgerMenu);
+    }
+
+    public CategoryTopStoriesPage openDropdownSelectTopStories() {
+        waitAndClickOnElement(topStoriesDropdown);
+
+        return new CategoryTopStoriesPage();
+    }
+
 
 //    public boolean verifyDefaultLanguageIsSelected(String language) {
 //        return buttonChangeLanguageDefaultBG.getText().contains(language);
