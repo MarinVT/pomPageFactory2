@@ -14,7 +14,7 @@ public class GetViewAllButtonListedSteps {
 
     @Given("User opens the following url {string} to see the view all button")
     public void user_opens_the_following_url_to_see_the_view_all_button(String url) {
-        homePage.navigateToHomepageURL(url);
+        homePage.openBrowser(url);
     }
     @And("User sees view all button")
     public void user_sees_view_all_button() {

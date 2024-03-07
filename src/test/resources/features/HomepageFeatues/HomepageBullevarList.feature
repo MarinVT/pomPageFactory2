@@ -1,4 +1,4 @@
-@sanity1
+@homepage
 Feature: Homepage main list Bullevard
   Bullevard list is activated from the CMS
 

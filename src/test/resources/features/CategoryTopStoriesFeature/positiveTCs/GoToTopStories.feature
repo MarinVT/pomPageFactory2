@@ -1,4 +1,4 @@
-@tag1
+@topStory @UI
 Feature: Top Stories category
   Category is activated from the CMS
 

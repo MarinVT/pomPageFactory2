@@ -1,4 +1,4 @@
-@functional
+@functional @search
 Feature: Search functionality
 
   Scenario: User should be able to search for an article

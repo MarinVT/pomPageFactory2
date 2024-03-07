@@ -1,4 +1,4 @@
-@smoke
+@smoke @homepage
 Feature: Homepage title
 
   Scenario: Validate homepage's title

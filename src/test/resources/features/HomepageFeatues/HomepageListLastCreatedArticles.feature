@@ -1,4 +1,4 @@
-@sanity2
+@homepage
 Feature: Homepage main list with last created articles
   Precondition: List is activated
 

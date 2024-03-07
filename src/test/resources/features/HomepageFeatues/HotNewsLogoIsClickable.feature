@@ -1,4 +1,4 @@
-@UI5
+@homepage
 Feature: Logo of hotNews is clickable on the homepage
 
   Scenario: User clicks on the logo of hotNews and it's redirected to the homepage

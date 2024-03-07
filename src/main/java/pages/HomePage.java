@@ -83,7 +83,7 @@ public class HomePage extends BasePage {
 //    Page Actions
 
     // Navigate to homepage via URL
-    public void navigateToHomepageURL(String url) {
+    public void openBrowser(String url) {
         navigateToSiteURL(url);
         acceptCookieButton();
     }
@@ -157,10 +157,10 @@ public class HomePage extends BasePage {
         waitAndClickOnElement(hamburgerMenu);
     }
 
-    public CategoryTopStoriesPage openDropdownSelectTopStories() {
+    public TopStoriesPageCategory openDropdownSelectTopStories() {
         waitAndClickOnElement(topStoriesDropdown);
 
-        return new CategoryTopStoriesPage();
+        return new TopStoriesPageCategory();
     }
 
 

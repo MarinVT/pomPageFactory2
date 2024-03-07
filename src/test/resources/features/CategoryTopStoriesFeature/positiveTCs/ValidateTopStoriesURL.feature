@@ -1,4 +1,4 @@
-@urlTest
+@topStory @UI
 Feature: Top Stories category url
   Category is activated from the CMS
 

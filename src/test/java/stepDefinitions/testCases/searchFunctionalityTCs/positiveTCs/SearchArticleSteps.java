@@ -18,7 +18,7 @@ public class SearchArticleSteps {
 
     @Given("User has open the official web page {string}")
     public void user_has_open_the_official_web_page(String url) {
-        homePage.navigateToHomepageURL(url);
+        homePage.openBrowser(url);
     }
 
     @And("User clicks on search icon")

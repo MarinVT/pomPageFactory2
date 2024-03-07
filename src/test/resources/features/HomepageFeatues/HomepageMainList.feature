@@ -1,4 +1,4 @@
-@sanity
+@homepage
 Feature: Homepage main section with 5 articles is listed
   Main list is activated from the CMS
 

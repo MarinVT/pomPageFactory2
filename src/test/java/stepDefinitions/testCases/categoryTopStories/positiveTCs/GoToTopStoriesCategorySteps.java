@@ -3,22 +3,22 @@ package stepDefinitions.testCases.categoryTopStories.positiveTCs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.CategoryTopStoriesPage;
+import pages.TopStoriesPageCategory;
 import pages.HomePage;
 
 public class GoToTopStoriesCategorySteps {
 
     private HomePage homePage;
-    private CategoryTopStoriesPage categoryTopStoriesPage;
+    private TopStoriesPageCategory categoryTopStoriesPage;
 
-    public GoToTopStoriesCategorySteps(HomePage homePage, CategoryTopStoriesPage categoryTopStoriesPage) {
+    public GoToTopStoriesCategorySteps(HomePage homePage, TopStoriesPageCategory categoryTopStoriesPage) {
         this.homePage = homePage;
         this.categoryTopStoriesPage = categoryTopStoriesPage;
     }
 
     @Given("User opens the following url {string} to open Top Stories category")
     public void user_opens_the_following_url_to_open_top_stories_category(String url) {
-        homePage.navigateToHomepageURL(url);
+        homePage.openBrowser(url);
     }
 
     @And("User clicks on hamburger menu")

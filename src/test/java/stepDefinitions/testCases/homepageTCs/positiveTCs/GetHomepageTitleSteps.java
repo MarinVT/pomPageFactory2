@@ -14,7 +14,7 @@ public class GetHomepageTitleSteps {
 
     @Given("User opens the following url {string}")
     public void user_opens_the_following_url(String url) {
-        homepage.navigateToSiteURL(url);
+        homepage.openBrowser(url);
     }
 
     @And("User gets homepage title {string}")
