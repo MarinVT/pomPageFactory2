@@ -1,14 +1,15 @@
 package stepDefinitions.testCases.categoryTopStories.positiveTCs;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.TopStoriesPageCategory;
 
-public class LoadMoreButtonListedSteps {
+public class LoadMoreButtonTopStoriesSteps {
 
     private TopStoriesPageCategory topStoriesPageCategory;
 
-    public LoadMoreButtonListedSteps(TopStoriesPageCategory topStoriesPageCategory) {
+    public LoadMoreButtonTopStoriesSteps(TopStoriesPageCategory topStoriesPageCategory) {
         this.topStoriesPageCategory = topStoriesPageCategory;
     }
 
@@ -16,8 +17,9 @@ public class LoadMoreButtonListedSteps {
     public void user_opens_url_to_see_the_view_all_button_listed_above_the_footer(String url) {
         topStoriesPageCategory.openTopStoryPageURL(url);
     }
-    @Then("User sees view all button listed on the page")
-    public void user_sees_view_all_button_listed_on_the_page() {
+
+    @And("User sees Load more button listed on the page")
+    public void user_sees_load_more_button_listed_on_the_page() {
         topStoriesPageCategory.loadMoreButtonListed();
     }
 

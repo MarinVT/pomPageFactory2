@@ -58,8 +58,12 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"__next\"]/header/div/div[2]/ul/li[1]/a")
     private WebElement topStoriesDropdown;
 
-    @FindBy(id = "brand")
-    private WebElement dropDownBrandCarLocator;
+    // Footer links locators
+    @FindBy(xpath = "//a[@class='footer_footer__nav-link__cVTmX'][contains(.,'Контакти')]")
+    private WebElement contactsLinkFooterLocator;
+
+    @FindBy(xpath = "//a[@href='/privacy']")
+    private WebElement privacyLinkFooterLocator;
 
     @FindBy(id = "brand")
     List <WebElement> dropDownBrandCarLocatorList;
@@ -90,7 +94,7 @@ public class HomePage extends BasePage {
 
     // Accept cookie button menu method
     public void acceptCookieButton() {
-        waitAndClickOnElement(acceptCookieButton);
+        waitVisibilityOfEWebElementAndClick(acceptCookieButton);
     }
 
     // Return homepage title
@@ -100,65 +104,74 @@ public class HomePage extends BasePage {
 
     // Homepage list with 5 articles method
     public void getMainListWith5Articles() {
-        waitVisibilityOfEWebElement(mainList5ArticlesLocator);
+        waitVisibilityOfEWebElementAndClick(mainList5ArticlesLocator);
     }
 
     // Homepage list with 5 articles Bullevard
     public void getList5ArticlesBulevard() {
-        waitVisibilityOfEWebElement(listBulevardLocator);
+        waitVisibilityOfEWebElementAndClick(listBulevardLocator);
     }
 
     // Homepage list with the last articles created
     public void getListLastCreatedArticles() {
-        waitVisibilityOfEWebElement(listLastCreatedArticlesLocator);
+        waitVisibilityOfEWebElementAndClick(listLastCreatedArticlesLocator);
     }
 
     // Homepage button "Share component"
     public void buttonViewAllListed() {
-        waitVisibilityOfEWebElement(viewAllButtonLocator);
+        waitVisibilityOfEWebElementAndClick(viewAllButtonLocator);
     }
 
     // Homepage button "Share component"
     public void shareComponentListedUnderTheArticle() {
-        waitVisibilityOfEWebElement(shareComponentLocatorUnderArticle);
+        waitVisibilityOfEWebElementAndClick(shareComponentLocatorUnderArticle);
     }
 
-    // Search functionality
+    // Footer links methods
+    public void clickOnContactsLink() {
+        waitVisibilityOfEWebElementAndClick(contactsLinkFooterLocator);
+    }
+
+    public void clickOnPrivacyLink() {
+        waitVisibilityOfElement(privacyLinkFooterLocator);
+    }
+
+    // ------>  Search functionality <------
     public void clickOnSearchIcon() {
-        waitVisibilityOfEWebElement(searchIcon);
+        waitVisibilityOfEWebElementAndClick(searchIcon);
         searchIcon.click();
     }
 
     public void enterTextToSearchField(String searchArticle) {
-        waitVisibilityOfEWebElement(inputSearchField);
+        waitVisibilityOfEWebElementAndClick(inputSearchField);
         sendKeysViaWebElementAndEnterString(inputSearchField, searchArticle);
     }
 
     public SearchPage doSearch() {
         waitCustomMethod(4000);
-        waitAndClickOnElement(searchIcon);
+        waitVisibilityOfElement(searchIcon);
         return new SearchPage();
     }
+    // ------>  Search functionality <------
 
     // Logo hotNews is clickable on the homepage
     public HomePage clickOnLogo() {
-        waitAndClickOnElement(logoHotNews);
+        waitVisibilityOfEWebElementAndClick(logoHotNews);
         return new HomePage();
     }
 
     // Logo of hotNews is listed
     public void logoIsListed() {
-        waitVisibilityOfEWebElement(logoHotNews);
+        waitVisibilityOfEWebElementAndClick(logoHotNews);
     }
 
     // Click on top stories from dropdown menu
-
     public void clickOnHamburgerMenu() {
-        waitAndClickOnElement(hamburgerMenu);
+        waitVisibilityOfEWebElementAndClick(hamburgerMenu);
     }
 
     public TopStoriesPageCategory openDropdownSelectTopStories() {
-        waitAndClickOnElement(topStoriesDropdown);
+        waitVisibilityOfEWebElementAndClick(topStoriesDropdown);
 
         return new TopStoriesPageCategory();
     }
@@ -168,19 +181,15 @@ public class HomePage extends BasePage {
 //        return buttonChangeLanguageDefaultBG.getText().contains(language);
 //    }
 
-    // Homepage search car input fields
-    public void selectDropdownBrandCar(String brand) {
-        selectFromDropDownByValue(dropDownBrandCarLocator,brand);
-    }
 
     // Takes homepage logo of the company
     public void getHomepageCompanyLogo() {
-        waitVisibilityOfElementLocatedBy(homepageLogoEcometalLTD);
+        waitVisibilityOfElementsLocatedBy(homepageLogoEcometalLTD);
     }
 
     // Takes homepage phone number of the company
     public void getHomepagePhoneNumberListed(String expectedResult) {
-        waitVisibilityOfEWebElement(homepagePhoneNumberLocatorWebelement);
+        waitVisibilityOfEWebElementAndClick(homepagePhoneNumberLocatorWebelement);
         Assert.assertEquals(homepagePhoneNumberLocatorWebelement.getText(), expectedResult);
     }
 

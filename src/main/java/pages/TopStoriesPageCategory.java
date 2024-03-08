@@ -32,9 +32,13 @@ public class TopStoriesPageCategory extends BasePage {
     @FindBy(xpath = "//button[contains(.,'Приемам')]")
     private WebElement acceptCookieButton;
 
+    // Top Stories title locator placed under the main photo in the list of the first article
+    @FindBy(xpath = "(//p[contains(.,'Top stories')])[1]")
+    private WebElement firstArticleLeadNewsCategoryTitleLocator;
+
     // Accept cookie button menu method
     public void acceptCookieButton() {
-        waitAndClickOnElement(acceptCookieButton);
+        waitVisibilityOfEWebElementAndClick(acceptCookieButton);
     }
 
     // Accept cookie method
@@ -44,7 +48,7 @@ public class TopStoriesPageCategory extends BasePage {
     }
 
     public void categoryTitleIsListed() {
-        waitVisibilityOfEWebElement(topStoriesCategoryTitleLocator);
+        waitVisibilityOfEWebElementAndClick(topStoriesCategoryTitleLocator);
     }
 
     // Validate correct Top Stories URL - https://hotnews.bg/top-stories
@@ -54,16 +58,20 @@ public class TopStoriesPageCategory extends BasePage {
 
     // Is first article listed from the main list of the category
     public void isFirstArticleListed() {
-        waitVisibilityOfEWebElement(mainListFirstArticle);
+        waitVisibilityOfEWebElementAndClick(mainListFirstArticle);
     }
 
     // Method that checks is a list with latest article is presented on the page
     public void isListLatestArticlePresented() {
-        waitVisibilityOfEWebElement(latestNewsListLocator);
+        waitVisibilityOfEWebElementAndClick(latestNewsListLocator);
     }
 
     public void loadMoreButtonListed() {
-        waitVisibilityOfEWebElement(loadMoreButtonLocator);
+        waitVisibilityOfEWebElementAndClick(loadMoreButtonLocator);
+    }
+
+    public void firstArticleCategoryTitleListed() {
+        waitVisibilityOfEWebElementAndClick(firstArticleLeadNewsCategoryTitleLocator);
     }
 
 }

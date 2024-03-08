@@ -20,11 +20,11 @@ public class SearchPage extends BasePage {
 
 
     public void getSearchStrongTitle() {
-        waitVisibilityOfEWebElement(searchResultLocator);
+        waitVisibilityOfEWebElementAndClick(searchResultLocator);
     }
 
     public void getFirstArticleList(String articleTitle) {
-        assertEqualsByElementExpectedTextWebElement(listedArticleLocator, articleTitle);
+        assertEqualsByWebElementExpectedText(listedArticleLocator, articleTitle);
     }
 
 }
