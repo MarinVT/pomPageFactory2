@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@footerPrivacyPage",
+        tags = "@footerAdds",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,

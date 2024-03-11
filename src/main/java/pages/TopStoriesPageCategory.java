@@ -38,7 +38,7 @@ public class TopStoriesPageCategory extends BasePage {
 
     // Accept cookie button menu method
     public void acceptCookieButton() {
-        waitVisibilityOfEWebElementAndClick(acceptCookieButton);
+        moveAndWaitElementAndClickOnIt(acceptCookieButton);
     }
 
     // Accept cookie method
@@ -48,7 +48,7 @@ public class TopStoriesPageCategory extends BasePage {
     }
 
     public void categoryTitleIsListed() {
-        waitVisibilityOfEWebElementAndClick(topStoriesCategoryTitleLocator);
+        moveAndWaitElementAndClickOnIt(topStoriesCategoryTitleLocator);
     }
 
     // Validate correct Top Stories URL - https://hotnews.bg/top-stories
@@ -58,20 +58,20 @@ public class TopStoriesPageCategory extends BasePage {
 
     // Is first article listed from the main list of the category
     public void isFirstArticleListed() {
-        waitVisibilityOfEWebElementAndClick(mainListFirstArticle);
+        moveAndWaitElementAndClickOnIt(mainListFirstArticle);
     }
 
     // Method that checks is a list with latest article is presented on the page
     public void isListLatestArticlePresented() {
-        waitVisibilityOfEWebElementAndClick(latestNewsListLocator);
+        moveAndWaitElementAndClickOnIt(latestNewsListLocator);
     }
 
     public void loadMoreButtonListed() {
-        waitVisibilityOfEWebElementAndClick(loadMoreButtonLocator);
+        moveAndWaitElementAndClickOnIt(loadMoreButtonLocator);
     }
 
     public void firstArticleCategoryTitleListed() {
-        waitVisibilityOfEWebElementAndClick(firstArticleLeadNewsCategoryTitleLocator);
+        moveAndWaitElementAndClickOnIt(firstArticleLeadNewsCategoryTitleLocator);
     }
 
 }

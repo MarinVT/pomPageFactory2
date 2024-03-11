@@ -27,20 +27,17 @@ public class PrivacyPageSteps {
 
     @And("User sees the following title of the page Personal data {string}")
     public void user_sees_the_following_title_of_the_page_personal_data(String expectedTitle) {
-//        privacyPage.getTitleOfPrivacyPage(expectedTitle);
-        System.out.println("test1");
+        privacyPage.getTitleOfPrivacyPage(expectedTitle);
     }
 
     @And("User sees tab on the page Privacy Policy {string}")
     public void user_sees_tab_on_the_page_privacy_policy(String expectedTabPrivacyPolicy) {
-//        privacyPage.tabPrivacyPolicyListed(expectedTabPrivacyPolicy);
-        System.out.println("test 2");
+        privacyPage.tabPrivacyPolicyListed(expectedTabPrivacyPolicy);
     }
 
     @And("User sees tab on the page Cookie policy {string}")
     public void user_sees_tab_on_the_page_cookie_policy(String expectedTabCookiePolicyTitle) {
-//        privacyPage.tabCookiePolicyListed(expectedTabCookiePolicyTitle);
-        System.out.println("test 3");
+        privacyPage.tabCookiePolicyListed(expectedTabCookiePolicyTitle);
     }
 
     @And("User sees tab on the page Rights under GDPR {string}")

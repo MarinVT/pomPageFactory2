@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.seleniumhq.jetty9.util.IO;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,9 +15,9 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
 
-    public static void main(String[] args) {
-        System.out.println(System.getProperty("os.name"));
-    }
+//    public static void main(String[] args) {
+//        System.out.println(System.getProperty("os.name"));
+//    }
 
     private static ThreadLocal<WebDriver> webDriverThreadLocal = new ThreadLocal<>();
 

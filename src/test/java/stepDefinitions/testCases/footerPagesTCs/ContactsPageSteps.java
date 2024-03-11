@@ -22,7 +22,7 @@ public class ContactsPageSteps {
     }
     @And("User clicks contacts in the footer")
     public void user_clicks_contacts_in_the_footer() {
-        homePage.clickOnContactsLink();
+        homePage.openContactsPage();
     }
     @Then("User is navigated to Contacts page")
     public void user_is_navigated_to_contacts_page() {

@@ -11,14 +11,19 @@ import org.testng.Assert;
 import utils.Global_Vars;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class BasePage {
 
+    public WebDriverWait wait;
+
     public BasePage() {
         PageFactory.initElements(getDriver(), this);
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
     }
 
     //    public static WebDriver driver;
@@ -40,45 +45,32 @@ public class BasePage {
 
     //Wait Wrapper Method using BY by - https://www.swtestacademy.com/page-object-model-java/
     public void waitVisibilityOfElementsLocatedBy(By by) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
-        webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
+    }
+
+    // WAIT VISIBILITY OF WEBELEMENT PASSING WEBELEMENT
+    public void waitVisibilityOfWebElement(WebElement element) {
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
+        wait.until(ExpectedConditions.visibilityOfAllElements(element));
+    }
+
+    public void moveAndWaitElementAndClickOnIt(WebElement webElement) {
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
+        WebElement findElement = wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        findElement.click();
     }
 
     // SENDKEYS CUSTOM METHOD USING BY AND STRING TO BE ENTERED
     public void sendKeysLocatedByEnterString(By by, String stringToEnter) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(stringToEnter);
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
+        wait.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(stringToEnter);
     }
 
     // SENDKEYS CUSTOM USING WEBELEMENT AND STRING TO BE ENTERED
     public void sendKeysViaWebElementAndEnterString(WebElement webElement, String stringToEnter) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).sendKeys(stringToEnter);
-    }
-
-    // WAIT METHOD VISIBILITY OF WEBELEMENT
-    public void waitVisibilityOfEWebElementAndClick(WebElement webElement) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
-        webDriverWait.until(ExpectedConditions.visibilityOf(webElement)).click();
-    }
-
-    // USING ACTION METHOD
-//
-//    public void moveToElementAndClickOnIt(WebElement webElement) {
-//        Point p = webElement.getLocation();
-//        Actions actions = new Actions(getDriver());
-//        actions.moveToElement(webElement).moveByOffset(p.x,p.y).click().perform();
-//    }
-
-    public void moveAndWaitElementAndClickOnIt(WebElement webElement) {
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
-        WebElement findElement = webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
-        findElement.click();
-    }
-
-    // Find element and click on it
-    public void waitVisibilityOfElement(WebElement webElement) {
-        waitVisibilityOfEWebElementAndClick(webElement);
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
+        wait.until(ExpectedConditions.elementToBeClickable(webElement)).sendKeys(stringToEnter);
     }
 
     public void waitCustomMethod(long time) {
@@ -152,7 +144,7 @@ public class BasePage {
 
     //ASSERT METHOD using WebElement
     public void assertEqualsByWebElementExpectedText(WebElement webElement, String expectedText) {
-        waitVisibilityOfEWebElementAndClick(webElement);
+        waitVisibilityOfWebElement(webElement);
         Assert.assertEquals(readTextWebElement(webElement), expectedText);
         System.out.println("Main text is: " + expectedText);
     }
@@ -172,6 +164,14 @@ public class BasePage {
         Assert.assertEquals(alertMessage, text);
     }
 
+    // SWITCH TO NEW TAB IN THE BROWSER
+    public void openNewTab() {
+        Set<String> handles = getDriver().getWindowHandles();
+        List<String> list = new ArrayList<>(handles);
+        String newWindow = list.get(1);
+        getDriver().switchTo().window(newWindow);
+    }
+
     /*
     Get desired values method and returns list with items - LINK BELOW
     https://www.testingminibytes.com/courses/java-8-for-automation-qa-power-of-functional-programming/optimising-gettext-gettagname-getattribute-methods-in-selenium
@@ -189,18 +189,5 @@ public class BasePage {
     Call the method ->
     getValues.foreach(System::println)
      */
-
-    //CLICK METHOD USING WEBELEMENT
-//    public void waitAndClickOnElement(By element) {
-//        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-//        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(element)).click();
-//    }
-
-//    // WAIT ELEMENT FOR A WEBELEMENT
-//    public WebElement waitVisibilityOfWebElement(WebElement element) {
-//        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.visibilityOf(element));
-//        return element;
-//    }
 
 }

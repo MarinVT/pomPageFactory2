@@ -21,11 +21,11 @@ public class ContactUsPage extends BasePage {
     By nameInputField = By.xpath("//input[contains(@placeholder,'Име *')]");
 
     public void contactUsTitleIsListed() {
-        waitVisibilityOfEWebElementAndClick(contactsTitlePage);
+        moveAndWaitElementAndClickOnIt(contactsTitlePage);
     }
 
     public void emailListedOnThePage() {
-        waitVisibilityOfEWebElementAndClick(contactsPageEmailListedLocator);
+        moveAndWaitElementAndClickOnIt(contactsPageEmailListedLocator);
     }
 
 

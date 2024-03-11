@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 8, 2024 04:39:12 PM</span></a>
+<a href="#"><span class="badge badge-primary">Mar 11, 2024 11:10:58 AM</span></a>
 </li>
 </ul>
 </div>
@@ -71,13 +71,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 8, 2024 04:39:12 PM</h3>
+<h3>Mar 11, 2024 11:10:58 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 8, 2024 04:39:17 PM</h3>
+<h3>Mar 11, 2024 11:11:28 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -148,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='28%'><b>2</b> steps passed</small></div>
+<div><small data-tooltip='75%'><b>3</b> steps passed</small></div>
 <div>
-<small data-tooltip='14%'><b>1</b> steps failed,
-<b>4</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='25%'><b>1</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -167,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Privacy page":4.657
+"Adds page":30.147
 };
 </script>
 <div class="row">
@@ -177,7 +177,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@footerPrivacyPage</td>
+<td>@footerAdds</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -230,10 +230,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 2,
+passGrandChild: 3,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 4,
+skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -255,7 +255,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@footerPrivacyPage</a>
+<a class="dropdown-item" href="#">@footerAdds</a>
 </ul>
 </li>
 </ul>
@@ -266,9 +266,9 @@ eventsCount: 5,
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Privacy page</p>
+            <p class="name">Adds page</p>
             <p class="text-sm">
-              <span>4:39:12 PM</span> / <span>00:00:04:657</span>
+              <span>11:10:58 AM</span> / <span>00:00:30:147</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -276,10 +276,10 @@ eventsCount: 5,
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Privacy page</h5>
-<span class='badge badge-success'>03.08.2024 4:39:12 PM</span>
-<span class='badge badge-danger'>03.08.2024 4:39:17 PM</span>
-<span class='badge badge-default'>00:00:04:657</span>
+<h5 class="test-status text-fail">Adds page</h5>
+<span class='badge badge-success'>03.11.2024 11:10:58 AM</span>
+<span class='badge badge-danger'>03.11.2024 11:11:28 AM</span>
+<span class='badge badge-default'>00:00:30:147</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -291,7 +291,7 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>User opens the Privacy page to validate the data in it</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>User opens the Adds page to validate the data in it</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -299,80 +299,123 @@ eventsCount: 5,
     </div>
         <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_opens_the_following_url_to_open_privacy_page(java.lang.String)">
-                <span>Given User opens the following url "https://hotnews.bg/" to open Privacy page</span>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_opens_the_following_url_to_open_adds_page(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to open Adds page</span>
       <div>
       </div>
               </div>
-              <div class="step fail-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_clicks_privacy_link_in_the_footer()">
-                <span>And User clicks privacy link in the footer</span>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_clicks_adds_link_in_the_footer()">
+                <span>When User clicks Adds link in the footer</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: Element <a class="footer_footer__nav-link__cVTmX" href="/privacy"> is not clickable at point (779,941) because another element <div class="onetrust-pc-dark-filter ot-fade-in"> obscures it
-Build info: version: '4.17.0', revision: 'e52b1be057*'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-21-generic', java.version: '17.0.10'
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_sees_the_following_title_of_the_page(java.lang.String)">
+                <span>Then User sees the following title of the page "ADVERTISEMENT & PRICES"</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [Proxy element for: DefaultElementLocator 'By.xpath: //h2[contains(.,'Advertisement & prices')]'] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObjects.BasePage.waitVisibilityOfWebElement(BasePage.java:53)
+	at pageObjects.BasePage.assertEqualsByWebElementExpectedText(BasePage.java:145)
+	at pages.AddsPage.verifyAddsPageTitleListed(AddsPage.java:17)
+	at stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_sees_the_following_title_of_the_page(AddsPageSteps.java:33)
+	at ✽.User sees the following title of the page "ADVERTISEMENT & PRICES"(classpath:features/FooterFeatures/AddsLink.feature:7)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //h2[contains(.,'Advertisement & prices')]
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-25-generic', java.version: '17.0.10'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [143db939-aef5-4a54-8246-cf54b272273a, clickElement {id=5bb14ef1-95d3-4a6e-b8fe-25af128623fb}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 123.0.1, moz:accessibilityChecks: false, moz:buildID: 20240304104836, moz:debuggerAddress: 127.0.0.1:9018, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 6.5.0-21-generic, moz:processID: 236358, moz:profile: /tmp/rust_mozprofileedVQUa, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://127.0.0.1:9018/devtool..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Element: [[FirefoxDriver: firefox on linux (143db939-aef5-4a54-8246-cf54b272273a)] -> xpath: //a[@href='/privacy']]
-Session ID: 143db939-aef5-4a54-8246-cf54b272273a
+Command: [70487b7f-08ad-4283-ae12-a02033ac8a99, findElement {using=xpath, value=//h2[contains(.,'Advertisement & prices')]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 123.0.1, moz:accessibilityChecks: false, moz:buildID: 20240304104836, moz:debuggerAddress: 127.0.0.1:14631, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 6.5.0-25-generic, moz:processID: 44070, moz:profile: /tmp/rust_mozprofileKkY1FW, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://127.0.0.1:14631/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 70487b7f-08ad-4283-ae12-a02033ac8a99
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:264)
+	at org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:260)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pageObjects.BasePage.waitVisibilityOfWebElement(BasePage.java:53)
+	at pageObjects.BasePage.assertEqualsByWebElementExpectedText(BasePage.java:145)
+	at pages.AddsPage.verifyAddsPageTitleListed(AddsPage.java:17)
+	at stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_sees_the_following_title_of_the_page(AddsPageSteps.java:33)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
-	at pageObjects.BasePage.waitVisibilityOfEWebElementAndClick(BasePage.java:62)
-	at pageObjects.BasePage.waitVisibilityOfElement(BasePage.java:81)
-	at pages.HomePage.clickOnPrivacyLink(HomePage.java:136)
-	at stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_clicks_privacy_link_in_the_footer(PrivacyPageSteps.java:25)
-	at ✽.User clicks privacy link in the footer(classpath:features/FooterFeatures/PrivacyPage.feature:6)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
 </textarea>
       
       </div>
               </div>
               <div class="step pass-bg" title="AFTER_STEP">
                 <span>stepDefinitions.base.Hooks.captureExceptionImage(io.cucumber.java.Scenario)</span>
-      <div>1709908756519
+      <div>1710148288326
           <div class="row mb-3"><div class="col-md-3">
 <img data-featherlight='../embedded1.png' src="../embedded1.png">
     
     </div></div>
 </div>
       <div>
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_the_following_title_of_the_page_personal_data(java.lang.String)">
-                <span>And User sees the following title of the page Personal data "ЛИЧНИ ДАННИ"</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_tab_on_the_page_privacy_policy(java.lang.String)">
-                <span>And User sees tab on the page Privacy Policy "Политика за поверителност"</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_tab_on_the_page_cookie_policy(java.lang.String)">
-                <span>And User sees tab on the page Cookie policy "Политика за бисквитки"</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_tab_on_the_page_rights_under_gdpr(java.lang.String)">
-                <span>And User sees tab on the page Rights under GDPR "Права по GDPR"</span>
-      <div>Step skipped
       </div>
               </div>
           </div>
@@ -403,12 +446,12 @@ Session ID: 143db939-aef5-4a54-8246-cf54b272273a
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@footerPrivacyPage</p>
+<p class="name">@footerAdds</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@footerPrivacyPage</h4>
+<h4>@footerAdds</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -422,11 +465,11 @@ Session ID: 143db939-aef5-4a54-8246-cf54b272273a
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>16:39:12 PM</td>
+<td>11:10:58 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>User opens the Privacy page to validate the data in it</a>
+<a href="#" class="linked" test-id='1' id='2'>User opens the Adds page to validate the data in it</a>
 <div class="">
-<span class="badge badge-default">Privacy page.User opens the Privacy page to validate the data in it</span>
+<span class="badge badge-default">Adds page.User opens the Adds page to validate the data in it</span>
 </div>
 </td>
 </tr>
@@ -455,12 +498,12 @@ Session ID: 143db939-aef5-4a54-8246-cf54b272273a
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
+<p class="name">org.openqa.selenium.TimeoutException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
+<h4>org.openqa.selenium.TimeoutException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -474,11 +517,11 @@ Session ID: 143db939-aef5-4a54-8246-cf54b272273a
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>16:39:16 PM</td>
+<td>11:11:08 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='6'>And User clicks privacy link in the footer</a>
+<a href="#" class="linked" test-id='1' id='8'>Then User sees the following title of the page "ADVERTISEMENT & PRICES"</a>
 <div class="">
-<span class="badge badge-default">Privacy page.User opens the Privacy page to validate the data in it.And User clicks privacy link in the footer</span>
+<span class="badge badge-default">Adds page.User opens the Adds page to validate the data in it.Then User sees the following title of the page "ADVERTISEMENT & PRICES"</span>
 </div>
 </td>
 </tr>

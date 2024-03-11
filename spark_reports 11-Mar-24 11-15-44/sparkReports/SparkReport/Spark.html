@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 8, 2024 04:35:26 PM</span></a>
+<a href="#"><span class="badge badge-primary">Mar 11, 2024 11:15:44 AM</span></a>
 </li>
 </ul>
 </div>
@@ -66,13 +66,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 8, 2024 04:35:26 PM</h3>
+<h3>Mar 11, 2024 11:15:44 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 8, 2024 04:35:29 PM</h3>
+<h3>Mar 11, 2024 11:15:54 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -143,7 +143,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>6</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>3</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -162,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Privacy page":3.413
+"Adds page":10.565
 };
 </script>
 <div class="row">
@@ -172,7 +172,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@footerPrivacyPage</td>
+<td>@footerAdds</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -225,7 +225,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 6,
+passGrandChild: 3,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -250,7 +250,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@footerPrivacyPage</a>
+<a class="dropdown-item" href="#">@footerAdds</a>
 </ul>
 </li>
 </ul>
@@ -261,9 +261,9 @@ eventsCount: 5,
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Privacy page</p>
+            <p class="name">Adds page</p>
             <p class="text-sm">
-              <span>4:35:26 PM</span> / <span>00:00:03:413</span>
+              <span>11:15:44 AM</span> / <span>00:00:10:565</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -271,10 +271,10 @@ eventsCount: 5,
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Privacy page</h5>
-<span class='badge badge-success'>03.08.2024 4:35:26 PM</span>
-<span class='badge badge-danger'>03.08.2024 4:35:29 PM</span>
-<span class='badge badge-default'>00:00:03:413</span>
+<h5 class="test-status text-pass">Adds page</h5>
+<span class='badge badge-success'>03.11.2024 11:15:44 AM</span>
+<span class='badge badge-danger'>03.11.2024 11:15:54 AM</span>
+<span class='badge badge-default'>00:00:10:565</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -286,38 +286,23 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User opens the Privacy page to validate the data in it</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User opens the Adds page to validate the data in it</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_opens_the_following_url_to_open_privacy_page(java.lang.String)">
-                <span>Given User opens the following url "https://hotnews.bg/" to open Privacy page</span>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_opens_the_following_url_to_open_adds_page(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to open Adds page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_clicks_privacy_link_in_the_footer()">
-                <span>And User clicks privacy link in the footer</span>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_clicks_adds_link_in_the_footer()">
+                <span>When User clicks Adds link in the footer</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_the_following_title_of_the_page_personal_data(java.lang.String)">
-                <span>And User sees the following title of the page Personal data "ЛИЧНИ ДАННИ"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_tab_on_the_page_privacy_policy(java.lang.String)">
-                <span>And User sees tab on the page Privacy Policy "Политика за поверителност"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_tab_on_the_page_cookie_policy(java.lang.String)">
-                <span>And User sees tab on the page Cookie policy "Политика за бисквитки"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_tab_on_the_page_rights_under_gdpr(java.lang.String)">
-                <span>And User sees tab on the page Rights under GDPR "Права по GDPR"</span>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_sees_the_following_title_of_the_page(java.lang.String)">
+                <span>Then User sees the following title of the page "ADVERTISEMENT & PRICES"</span>
       <div>
       </div>
               </div>
@@ -349,12 +334,12 @@ eventsCount: 5,
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@footerPrivacyPage</p>
+<p class="name">@footerAdds</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@footerPrivacyPage</h4>
+<h4>@footerAdds</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -368,11 +353,11 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:35:26 PM</td>
+<td>11:15:44 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>User opens the Privacy page to validate the data in it</a>
+<a href="#" class="linked" test-id='1' id='2'>User opens the Adds page to validate the data in it</a>
 <div class="">
-<span class="badge badge-default">Privacy page.User opens the Privacy page to validate the data in it</span>
+<span class="badge badge-default">Adds page.User opens the Adds page to validate the data in it</span>
 </div>
 </td>
 </tr>

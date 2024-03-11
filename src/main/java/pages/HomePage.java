@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import pageObjects.BasePage;
@@ -62,30 +63,16 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@class='footer_footer__nav-link__cVTmX'][contains(.,'Контакти')]")
     private WebElement contactsLinkFooterLocator;
 
-    @FindBy(xpath = "//a[@href='/privacy']")
+    @FindBy(xpath = "//a[@target='_blank'][contains(.,'За рекламa')]")
+    private WebElement addsLinkFooterLocator;
+
+    @FindBy(linkText = "Лични данни")
     private WebElement privacyLinkFooterLocator;
 
     @FindBy(id = "brand")
     List <WebElement> dropDownBrandCarLocatorList;
 
-    // Locator of About Us page on the homepage in the main section with links on the top
-    By aboutUsLinkHomepageTopOfPage = By.linkText("За Нас");
-    // Contacts Locator
-    By contactUsLinkHomepageTopOfPage = By.linkText("Контакти");
-    // Homepage logo company locator
-    By homepageLogoEcometalLTD = By.xpath("//img[@src='https://ecometal.bg/wp-content/uploads/2021/03/logo-ecometal.png']");
-
-    // Homepage phone number locator in the right upper corner
-    By homepagePhoneNumber = By.xpath("//div[@class='contact-number'][contains(.,'Позвънете Ни0885 771 777')]");
-    private @FindBy(xpath = "(//strong[contains(.,'0885 771 777')])[1]")
-    WebElement homepagePhoneNumberLocatorWebelement;
-
-
-    @FindBy(xpath = "/html/body/div[1]/header/div[3]/div/div[2]/nav/div[2]/ul/li[1]")
-    private WebElement aboutUsLinkHomepageTopOfPageWebElement;
-
 //    Page Actions
-
     // Navigate to homepage via URL
     public void openBrowser(String url) {
         navigateToSiteURL(url);
@@ -94,7 +81,7 @@ public class HomePage extends BasePage {
 
     // Accept cookie button menu method
     public void acceptCookieButton() {
-        waitVisibilityOfEWebElementAndClick(acceptCookieButton);
+        moveAndWaitElementAndClickOnIt(acceptCookieButton);
     }
 
     // Return homepage title
@@ -104,94 +91,94 @@ public class HomePage extends BasePage {
 
     // Homepage list with 5 articles method
     public void getMainListWith5Articles() {
-        waitVisibilityOfEWebElementAndClick(mainList5ArticlesLocator);
+        moveAndWaitElementAndClickOnIt(mainList5ArticlesLocator);
     }
 
     // Homepage list with 5 articles Bullevard
     public void getList5ArticlesBulevard() {
-        waitVisibilityOfEWebElementAndClick(listBulevardLocator);
+        moveAndWaitElementAndClickOnIt(listBulevardLocator);
     }
 
     // Homepage list with the last articles created
     public void getListLastCreatedArticles() {
-        waitVisibilityOfEWebElementAndClick(listLastCreatedArticlesLocator);
+        moveAndWaitElementAndClickOnIt(listLastCreatedArticlesLocator);
     }
 
     // Homepage button "Share component"
     public void buttonViewAllListed() {
-        waitVisibilityOfEWebElementAndClick(viewAllButtonLocator);
+        moveAndWaitElementAndClickOnIt(viewAllButtonLocator);
     }
 
     // Homepage button "Share component"
     public void shareComponentListedUnderTheArticle() {
-        waitVisibilityOfEWebElementAndClick(shareComponentLocatorUnderArticle);
-    }
-
-    // Footer links methods
-    public void clickOnContactsLink() {
-        waitVisibilityOfEWebElementAndClick(contactsLinkFooterLocator);
-    }
-
-    public void clickOnPrivacyLink() {
-        waitVisibilityOfElement(privacyLinkFooterLocator);
+        moveAndWaitElementAndClickOnIt(shareComponentLocatorUnderArticle);
     }
 
     // ------>  Search functionality <------
     public void clickOnSearchIcon() {
-        waitVisibilityOfEWebElementAndClick(searchIcon);
+        moveAndWaitElementAndClickOnIt(searchIcon);
         searchIcon.click();
     }
 
     public void enterTextToSearchField(String searchArticle) {
-        waitVisibilityOfEWebElementAndClick(inputSearchField);
+        moveAndWaitElementAndClickOnIt(inputSearchField);
         sendKeysViaWebElementAndEnterString(inputSearchField, searchArticle);
     }
 
     public SearchPage doSearch() {
         waitCustomMethod(4000);
-        waitVisibilityOfElement(searchIcon);
+        moveAndWaitElementAndClickOnIt(searchIcon);
         return new SearchPage();
     }
     // ------>  Search functionality <------
 
     // Logo hotNews is clickable on the homepage
     public HomePage clickOnLogo() {
-        waitVisibilityOfEWebElementAndClick(logoHotNews);
+        moveAndWaitElementAndClickOnIt(logoHotNews);
         return new HomePage();
     }
 
     // Logo of hotNews is listed
     public void logoIsListed() {
-        waitVisibilityOfEWebElementAndClick(logoHotNews);
+        moveAndWaitElementAndClickOnIt(logoHotNews);
     }
 
     // Click on top stories from dropdown menu
     public void clickOnHamburgerMenu() {
-        waitVisibilityOfEWebElementAndClick(hamburgerMenu);
+        moveAndWaitElementAndClickOnIt(hamburgerMenu);
     }
 
     public TopStoriesPageCategory openDropdownSelectTopStories() {
-        waitVisibilityOfEWebElementAndClick(topStoriesDropdown);
+        moveAndWaitElementAndClickOnIt(topStoriesDropdown);
 
         return new TopStoriesPageCategory();
+    }
+
+    // FOOTER METHODS NAVIGATING TO EACH PAGE - КОНТАКТИ, За Реклама, Общи условия, Етични правила, Лични данни и други
+
+    // Link Contacts
+    public ContactUsPage openContactsPage() {
+        moveAndWaitElementAndClickOnIt(contactsLinkFooterLocator);
+        return new ContactUsPage();
+    }
+
+    // Link За реклама
+    public AddsPage openAddsPage() {
+        moveAndWaitElementAndClickOnIt(addsLinkFooterLocator);
+        openNewTab();
+        return new AddsPage();
+    }
+
+    // Footer - Personal data
+    public PrivacyPage clickOnPrivacyLink() {
+        moveAndWaitElementAndClickOnIt(privacyLinkFooterLocator);
+        return new PrivacyPage();
     }
 
 
 //    public boolean verifyDefaultLanguageIsSelected(String language) {
 //        return buttonChangeLanguageDefaultBG.getText().contains(language);
 //    }
-
-
-    // Takes homepage logo of the company
-    public void getHomepageCompanyLogo() {
-        waitVisibilityOfElementsLocatedBy(homepageLogoEcometalLTD);
-    }
-
-    // Takes homepage phone number of the company
-    public void getHomepagePhoneNumberListed(String expectedResult) {
-        waitVisibilityOfEWebElementAndClick(homepagePhoneNumberLocatorWebelement);
-        Assert.assertEquals(homepagePhoneNumberLocatorWebelement.getText(), expectedResult);
-    }
 
     // HELPER METHODS
     // Get all values from dropdown brand and print it all - Example
@@ -202,11 +189,8 @@ public class HomePage extends BasePage {
         allValues.forEach(System.out::println);
     }
 
-    // Open ABOUT US page clicking on link "За НАС"
-    public AboutUsPage openAboutUsPage() {
-        findWebElementByLocator(aboutUsLinkHomepageTopOfPage).click();
-        return new AboutUsPage();
-    }
+
+
 
 
 }

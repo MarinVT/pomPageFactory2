@@ -1,7 +1,7 @@
 @footerPrivacyPage
 Feature: Privacy page
 
-  Scenario: User opens the Privacy page to validate the data in it
+  Scenario: User opens the Adds page to validate the data in it
     Given User opens the following url "https://hotnews.bg/" to open Privacy page
     And User clicks privacy link in the footer
     And User sees the following title of the page Personal data "ЛИЧНИ ДАННИ"

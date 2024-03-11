@@ -20,7 +20,7 @@ public class SearchPage extends BasePage {
 
 
     public void getSearchStrongTitle() {
-        waitVisibilityOfEWebElementAndClick(searchResultLocator);
+        moveAndWaitElementAndClickOnIt(searchResultLocator);
     }
 
     public void getFirstArticleList(String articleTitle) {
