@@ -3,8 +3,8 @@ package stepDefinitions.testCases.categoryTopStories.positiveTCs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.TopStoriesPageCategory;
-import pages.HomePage;
+import pageObjects.TopStoriesPageCategory;
+import pageObjects.HomePage;
 
 public class GoToTopStoriesCategorySteps {
 
@@ -26,8 +26,8 @@ public class GoToTopStoriesCategorySteps {
         homePage.clickOnHamburgerMenu();
     }
 
-    @And("User clicks on Top Stories link")
-    public void user_clicks_on_top_stories_link() {
+    @And("User selects Top Stories category")
+    public void user_selects_top_stories_category() {
         homePage.openDropdownSelectTopStories();
     }
 

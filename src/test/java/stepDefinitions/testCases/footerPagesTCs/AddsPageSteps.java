@@ -3,8 +3,8 @@ package stepDefinitions.testCases.footerPagesTCs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.AddsPage;
-import pages.HomePage;
+import pageObjects.AddsPage;
+import pageObjects.HomePage;
 
 public class AddsPageSteps {
 
@@ -25,7 +25,6 @@ public class AddsPageSteps {
     public void user_clicks_adds_link_in_the_footer() {
         homePage.waitCustomMethod(3000);
         homePage.openAddsPage();
-        homePage.waitCustomMethod(3000);
     }
 
     @Then("User sees the following title of the page {string}")

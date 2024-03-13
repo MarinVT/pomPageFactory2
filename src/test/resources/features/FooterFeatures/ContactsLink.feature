@@ -1,4 +1,4 @@
-@footer
+@footerContacts @footer
 Feature: Contacts page
 
   Scenario: User opens the contacts page and takes the email listed in it

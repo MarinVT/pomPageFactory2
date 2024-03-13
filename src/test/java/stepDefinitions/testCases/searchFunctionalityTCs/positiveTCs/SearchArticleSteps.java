@@ -3,8 +3,8 @@ package stepDefinitions.testCases.searchFunctionalityTCs.positiveTCs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.HomePage;
-import pages.SearchPage;
+import pageObjects.HomePage;
+import pageObjects.SearchPage;
 
 public class SearchArticleSteps {
 

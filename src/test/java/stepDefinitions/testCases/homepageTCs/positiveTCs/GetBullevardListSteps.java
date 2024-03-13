@@ -2,7 +2,7 @@ package stepDefinitions.testCases.homepageTCs.positiveTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import pages.HomePage;
+import pageObjects.HomePage;
 
 public class GetBullevardListSteps {
 

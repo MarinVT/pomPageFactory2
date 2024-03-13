@@ -2,8 +2,7 @@ package stepDefinitions.testCases.categoryTopStories.positiveTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import pages.TopStoriesPageCategory;
+import pageObjects.TopStoriesPageCategory;
 
 public class LoadMoreButtonTopStoriesSteps {
 

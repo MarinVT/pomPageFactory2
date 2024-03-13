@@ -2,8 +2,8 @@ package stepDefinitions.testCases.footerPagesTCs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import pages.HomePage;
-import pages.PrivacyPage;
+import pageObjects.HomePage;
+import pageObjects.PrivacyPage;
 
 public class PrivacyPageSteps {
 

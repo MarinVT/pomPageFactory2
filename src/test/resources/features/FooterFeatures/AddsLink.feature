@@ -1,4 +1,4 @@
-@footerAdds
+@footerAdds @footer
 Feature: Adds page
 
   Scenario: User opens the Adds page to validate the data in it

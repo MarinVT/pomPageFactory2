@@ -3,7 +3,7 @@ package stepDefinitions.testCases.homepageTCs.positiveTCs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.HomePage;
+import pageObjects.HomePage;
 
 public class LogoIsClickableSteps {
 
