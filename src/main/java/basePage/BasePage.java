@@ -67,9 +67,15 @@ public class BasePage {
         findElement.click();
     }
 
+    // Hover method using Actions
     public void waitHoverEffect(WebElement webElement) {
         Actions actions = new Actions(getDriver());
         actions.moveToElement(webElement).perform();
+    }
+
+    public void hoverAndClick(WebElement webElement) {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(webElement).click().build().perform();
     }
 
     // SENDKEYS CUSTOM METHOD USING BY AND STRING TO BE ENTERED

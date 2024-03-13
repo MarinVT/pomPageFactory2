@@ -4,11 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pageObjects.HomePage;
 
-public class VerifyShareComponentIsListedSteps {
+public class ShareComponentInListSteps {
 
     private HomePage homePage;
 
-    public VerifyShareComponentIsListedSteps(HomePage homePage) {
+    public ShareComponentInListSteps(HomePage homePage) {
         this.homePage = homePage;
     }
 

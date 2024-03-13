@@ -4,11 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pageObjects.HomePage;
 
-public class GetListLastCreatedArticlesSteps {
+public class HomepageListLastCreatedArticlesSteps {
 
     private HomePage homePage;
 
-    public GetListLastCreatedArticlesSteps(HomePage homePage) {
+    public HomepageListLastCreatedArticlesSteps(HomePage homePage) {
         this.homePage = homePage;
     }
 

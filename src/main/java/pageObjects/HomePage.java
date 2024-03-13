@@ -46,7 +46,7 @@ public class HomePage extends BasePage {
     private WebElement inputSearchField;
 
     // Logo homepage
-    @FindBy(xpath = "(//img[contains(@alt,'Hotnews.bg')])[1]")
+    @FindBy(xpath = "(//img[contains(@srcset,'logo.svg?v=384&format=webp 2x')])[1]")
     private WebElement logoHotNews;
 
     // Hamburger menu locator
@@ -100,27 +100,27 @@ public class HomePage extends BasePage {
 
     // Homepage list with 5 articles method
     public void getMainListWith5Articles() {
-        waitElementAndClickOnIt(mainList5ArticlesLocator);
+        waitElementToBeVisible(mainList5ArticlesLocator);
     }
 
     // Homepage list with 5 articles Bullevard
-    public void getList5ArticlesBulevard() {
-        waitElementAndClickOnIt(listBulevardLocator);
+    public void getList5ArticlesBoulevard() {
+        waitElementToBeVisible(listBulevardLocator);
     }
 
     // Homepage list with the last articles created
     public void getListLastCreatedArticles() {
-        waitElementAndClickOnIt(listLastCreatedArticlesLocator);
+        waitElementToBeVisible(listLastCreatedArticlesLocator);
     }
 
     // Homepage button "Share component"
     public void buttonViewAllListed() {
-        waitElementAndClickOnIt(viewAllButtonLocator);
+        waitElementToBeVisible(viewAllButtonLocator);
     }
 
-    // Homepage button "Share component"
+    // Homepage "Share component" is listed
     public void shareComponentListedUnderTheArticle() {
-        waitElementAndClickOnIt(shareComponentLocatorUnderArticle);
+        waitVisibilityOfWebElement(shareComponentLocatorUnderArticle);
     }
 
     // ------>  Search functionality <------
@@ -143,13 +143,15 @@ public class HomePage extends BasePage {
 
     // Logo hotNews is clickable on the homepage
     public HomePage clickOnLogo() {
-        waitElementAndClickOnIt(logoHotNews);
+//        waitHoverEffect(logoHotNews);
+//        waitElementAndClickOnIt(logoHotNews);
+        hoverAndClick(logoHotNews);
         return new HomePage();
     }
 
     // Logo of hotNews is listed
     public void logoIsListed() {
-        waitElementAndClickOnIt(logoHotNews);
+        waitElementToBeVisible(logoHotNews);
     }
 
     // Click on top stories from dropdown menu

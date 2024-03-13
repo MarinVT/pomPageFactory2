@@ -1,4 +1,4 @@
-@homepage
+@homepage1
 Feature: Share component with all social icons under the article
 
   Scenario: User is able to use the social share component in list with articles

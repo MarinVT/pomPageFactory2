@@ -5,11 +5,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageObjects.HomePage;
 
-public class LogoIsClickableSteps {
+public class HotNewsLogoIsClickableSteps {
 
     private HomePage homePage;
 
-    public LogoIsClickableSteps(HomePage homePage) {
+    public HotNewsLogoIsClickableSteps(HomePage homePage) {
         this.homePage = homePage;
     }
 
