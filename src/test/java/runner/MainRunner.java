@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@homepage1",
+        tags = "@homepage",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,
