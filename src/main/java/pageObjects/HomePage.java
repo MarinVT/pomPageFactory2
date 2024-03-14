@@ -42,7 +42,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//img[@src='/image/icon/search.svg?v=48&format=webp']")
     private WebElement searchIcon;
 
-    @FindBy(xpath = "//input[contains(@placeholder,'Търси в hotNews')]")
+    @FindBy(xpath = "//input[contains(@class,'search_search__input__xo3rD')]")
     private WebElement inputSearchField;
 
     // Logo homepage
@@ -125,17 +125,18 @@ public class HomePage extends BasePage {
 
     // ------>  Search functionality <------
     public void clickOnSearchIcon() {
+        hoverAndClick(searchIcon);
         waitElementAndClickOnIt(searchIcon);
-        searchIcon.click();
+
+//        waitElementAndClickOnIt(searchIcon);
     }
 
     public void enterTextToSearchField(String searchArticle) {
-        waitElementAndClickOnIt(inputSearchField);
+        waitVisibilityOfWebElement(inputSearchField);
         sendKeysViaWebElementAndEnterString(inputSearchField, searchArticle);
     }
 
     public SearchPage doSearch() {
-        waitCustomMethod(4000);
         waitElementAndClickOnIt(searchIcon);
         return new SearchPage();
     }

@@ -1,0 +1,2197 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>hotNews App</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 14, 2024 03:18:46 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 14, 2024 03:18:46 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 14, 2024 03:19:57 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>19</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='95%'>
+<b>19</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='5%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='95%'><b>19</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='5%'><b>1</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='96%'><b>55</b> steps passed</small></div>
+<div>
+<small data-tooltip='1%'><b>1</b> steps failed,
+<b>1</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Adds page":8.878,"Terms page":5.849,"Contacts page":2.936,"Ethical rules page":5.637,"Privacy page":3.542,"Homepage main list BOULEVARD":1.981,"Homepage main list with last created articles":2.365,"Homepage main section with 5 articles is listed":1.83,"Homepage title":2.028,"Homepage "View all" button used to return more articles":2.485,"Logo of hotNews is clickable on the homepage":2.168,"Share component with all social icons under the article":1.882,"Open article":0.656,"Top Stories category title":1.811,"Top Stories category":4.642,"Top Stories latest articles list":11.712,"On Top Stories page "Load More" button is listed":2.556,"Top Stories main list":2.075,"Top Stories category url":1.822,"Search functionality":3.576
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@topStory</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@smoke</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@footerTerms</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@topStory1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@footerAdds</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@footerContacts</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@footerPrivacyPage</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@search</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@UI</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@footer</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@ethicalTerms</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@functional</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@homepage</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@openArticleNegative</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>AppName</td>
+<td>hotNews Automation Project</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Marin VT QA LEAD</td>
+</tr>
+<tr>
+<td>build</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Linux</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 19,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 19,
+failChild: 1,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 55,
+failGrandChild: 1,
+warningGrandChild: 0,
+skipGrandChild: 1,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@topStory</a><a class="dropdown-item" href="#">@smoke</a><a class="dropdown-item" href="#">@footerTerms</a><a class="dropdown-item" href="#">@topStory1</a><a class="dropdown-item" href="#">@footerAdds</a><a class="dropdown-item" href="#">@footerContacts</a><a class="dropdown-item" href="#">@footerPrivacyPage</a><a class="dropdown-item" href="#">@search</a><a class="dropdown-item" href="#">@UI</a><a class="dropdown-item" href="#">@footer</a><a class="dropdown-item" href="#">@ethicalTerms</a><a class="dropdown-item" href="#">@functional</a><a class="dropdown-item" href="#">@homepage</a><a class="dropdown-item" href="#">@openArticleNegative</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Adds page</p>
+            <p class="text-sm">
+              <span>3:18:47 PM</span> / <span>00:00:08:878</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Adds page</h5>
+<span class='badge badge-success'>03.14.2024 3:18:47 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:18:56 PM</span>
+<span class='badge badge-default'>00:00:08:878</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User opens the Adds page to validate the data in it</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_opens_the_following_url_to_open_adds_page(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to open Adds page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_clicks_adds_link_in_the_footer()">
+                <span>When User clicks Adds link in the footer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.AddsPageSteps.user_sees_the_following_title_of_the_page(java.lang.String)">
+                <span>Then User sees the following title of the page "ADVERTISEMENT & PRICES"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Terms page</p>
+            <p class="text-sm">
+              <span>3:18:56 PM</span> / <span>00:00:05:849</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Terms page</h5>
+<span class='badge badge-success'>03.14.2024 3:18:56 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:01 PM</span>
+<span class='badge badge-default'>00:00:05:849</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="12"><span class="badge log pass-bg mr-2">Pass</span>User opens the Terms page and gets the Title Common Terms to use web sites of sportal</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.TermsPageSteps.user_opens_the_following_url_to_open_terms_page(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to open Terms page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.TermsPageSteps.user_clicks_terms_in_the_footer()">
+                <span>And User clicks Terms in the footer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.TermsPageSteps.user_is_navigated_to_terms_page()">
+                <span>Then User is navigated to Terms page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.TermsPageSteps.user_sees_the_following_title_of_section(java.lang.String)">
+                <span>And User sees the following title of section "ОБЩИ УСЛОВИЯ ЗА ИЗПОЛЗВАНЕ НА САЙТОВЕТЕ НА СПОРТАЛ.БГ АД"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Contacts page</p>
+            <p class="text-sm">
+              <span>3:19:01 PM</span> / <span>00:00:02:936</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Contacts page</h5>
+<span class='badge badge-success'>03.14.2024 3:19:01 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:04 PM</span>
+<span class='badge badge-default'>00:00:02:936</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="24"><span class="badge log pass-bg mr-2">Pass</span>User opens the contacts page and takes the email listed in it</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.ContactsPageSteps.user_opens_the_following_url_to_open_contacts_page(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to open Contacts page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.ContactsPageSteps.user_clicks_contacts_in_the_footer()">
+                <span>And User clicks contacts in the footer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.ContactsPageSteps.user_is_navigated_to_contacts_page()">
+                <span>Then User is navigated to Contacts page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.ContactsPageSteps.user_sees_the_following_email_for_contacts(java.lang.String)">
+                <span>And User sees the following email for contacts "e-mail: office@hotnews.bg"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="35"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Ethical rules page</p>
+            <p class="text-sm">
+              <span>3:19:04 PM</span> / <span>00:00:05:637</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Ethical rules page</h5>
+<span class='badge badge-success'>03.14.2024 3:19:04 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:10 PM</span>
+<span class='badge badge-default'>00:00:05:637</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="36"><span class="badge log pass-bg mr-2">Pass</span>User opens the Ethical page and gets the Title page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.EthicalPageSteps.user_opens_the_following_url_to_open_ethical_rules_page(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to open Ethical rules page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.EthicalPageSteps.user_clicks_ethical_rules_link_in_the_footer()">
+                <span>And User clicks Ethical Rules link in the footer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.EthicalPageSteps.user_is_navigated_to_ethical_rules_page()">
+                <span>Then User is navigated to Ethical rules page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.EthicalPageSteps.user_sees_the_following_title_of_section_in_grey_background(java.lang.String)">
+                <span>And User sees the following title of section in grey background "ЕТИЧНИ ПРАВИЛА НА НСС"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="47"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Privacy page</p>
+            <p class="text-sm">
+              <span>3:19:10 PM</span> / <span>00:00:03:542</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Privacy page</h5>
+<span class='badge badge-success'>03.14.2024 3:19:10 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:14 PM</span>
+<span class='badge badge-default'>00:00:03:542</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=47</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="48"><span class="badge log pass-bg mr-2">Pass</span>User opens the Adds page to validate the data in it</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_opens_the_following_url_to_open_privacy_page(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to open Privacy page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_clicks_privacy_link_in_the_footer()">
+                <span>And User clicks privacy link in the footer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_the_following_title_of_the_page_personal_data(java.lang.String)">
+                <span>And User sees the following title of the page Personal data "ЛИЧНИ ДАННИ"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_tab_on_the_page_privacy_policy(java.lang.String)">
+                <span>And User sees tab on the page Privacy Policy "Политика за поверителност"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_tab_on_the_page_cookie_policy(java.lang.String)">
+                <span>And User sees tab on the page Cookie policy "Политика за бисквитки"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.footerPagesTCs.PrivacyPageSteps.user_sees_tab_on_the_page_rights_under_gdpr(java.lang.String)">
+                <span>And User sees tab on the page Rights under GDPR "Права по GDPR"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="63"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Homepage main list BOULEVARD</p>
+            <p class="text-sm">
+              <span>3:19:14 PM</span> / <span>00:00:01:981</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Homepage main list BOULEVARD</h5>
+<span class='badge badge-success'>03.14.2024 3:19:14 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:16 PM</span>
+<span class='badge badge-default'>00:00:01:981</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=63</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> BOULEVARD list is activated from the CMS</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="64"><span class="badge log pass-bg mr-2">Pass</span>User gets main list BOULEVARD</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageBoulevardListSteps.user_opens_the_following_url_to_see_the_main_list_boulevard(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to see the main list BOULEVARD</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageBoulevardListSteps.user_sees_main_list_boulevard_with_articles()">
+                <span>And User sees main list BOULEVARD with articles</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="71"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Homepage main list with last created articles</p>
+            <p class="text-sm">
+              <span>3:19:16 PM</span> / <span>00:00:02:365</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Homepage main list with last created articles</h5>
+<span class='badge badge-success'>03.14.2024 3:19:16 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:18 PM</span>
+<span class='badge badge-default'>00:00:02:365</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=71</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Precondition: List is activated</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="72"><span class="badge log pass-bg mr-2">Pass</span>User gets main list with last created articles</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageListLastCreatedArticlesSteps.user_opens_the_following_url_to_see_the_list_with_last_created_articles(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to see the list with last created articles</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageListLastCreatedArticlesSteps.user_sees_main_list_with_last_created_articles()">
+                <span>And User sees main list with last created articles</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="79"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Homepage main section with 5 articles is listed</p>
+            <p class="text-sm">
+              <span>3:19:18 PM</span> / <span>00:00:01:830</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Homepage main section with 5 articles is listed</h5>
+<span class='badge badge-success'>03.14.2024 3:19:18 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:20 PM</span>
+<span class='badge badge-default'>00:00:01:830</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=79</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Main list is activated from the CMS</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="80"><span class="badge log pass-bg mr-2">Pass</span>User gets main list with 5 articles</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageMainListSteps.user_opens_the_following_url_to_see_the_main_list_with_five_articles(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to see the main list with five articles</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageMainListSteps.user_sees_main_list_with_five_articles()">
+                <span>And User sees main list with five articles</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="87"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Homepage title</p>
+            <p class="text-sm">
+              <span>3:19:20 PM</span> / <span>00:00:02:028</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Homepage title</h5>
+<span class='badge badge-success'>03.14.2024 3:19:20 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:22 PM</span>
+<span class='badge badge-default'>00:00:02:028</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=87</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="88"><span class="badge log pass-bg mr-2">Pass</span>Validate homepage's title</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageTitleSteps.user_opens_the_following_url(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageTitleSteps.user_gets_homepage_title(java.lang.String)">
+                <span>And User gets homepage title "Светски новини, клюки - Hotnews.bg"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="95"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Homepage "View all" button used to return more articles</p>
+            <p class="text-sm">
+              <span>3:19:22 PM</span> / <span>00:00:02:485</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Homepage "View all" button used to return more articles</h5>
+<span class='badge badge-success'>03.14.2024 3:19:22 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:24 PM</span>
+<span class='badge badge-default'>00:00:02:485</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=95</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="96"><span class="badge log pass-bg mr-2">Pass</span>User is able to use "View all" button</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageViewAllButtonSteps.user_opens_the_following_url_to_see_the_view_all_button(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to see the view all button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HomepageViewAllButtonSteps.user_sees_load_more_button()">
+                <span>And User sees Load more button</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="103"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Logo of hotNews is clickable on the homepage</p>
+            <p class="text-sm">
+              <span>3:19:24 PM</span> / <span>00:00:02:168</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Logo of hotNews is clickable on the homepage</h5>
+<span class='badge badge-success'>03.14.2024 3:19:24 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:26 PM</span>
+<span class='badge badge-default'>00:00:02:168</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=103</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="104"><span class="badge log pass-bg mr-2">Pass</span>User clicks on the logo of hotNews and it's redirected to the homepage</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HotNewsLogoIsClickableSteps.user_opens_the_following_url_to_click_on_the_logo_fo_hot_news(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to click on the logo fo hotNews</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HotNewsLogoIsClickableSteps.user_clicks_in_the_logo_of_hot_news_on_the_homepage()">
+                <span>And User clicks in the logo of hotNews on the homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.HotNewsLogoIsClickableSteps.user_sees_refreshed_page()">
+                <span>Then User sees refreshed page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="113"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Share component with all social icons under the article</p>
+            <p class="text-sm">
+              <span>3:19:26 PM</span> / <span>00:00:01:882</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Share component with all social icons under the article</h5>
+<span class='badge badge-success'>03.14.2024 3:19:26 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:28 PM</span>
+<span class='badge badge-default'>00:00:01:882</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=113</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="114"><span class="badge log pass-bg mr-2">Pass</span>User is able to use the social share component in list with articles</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.ShareComponentInListSteps.user_opens_the_following_url_to_see_the_share_component_in_list(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to see the share component in list</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.homepageTCs.positiveTCs.ShareComponentInListSteps.user_is_able_to_use_the_share_component_by_hover_on_it()">
+                <span>And User is able to use the share component by hover on it</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="121"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Open article</p>
+            <p class="text-sm">
+              <span>3:19:28 PM</span> / <span>00:00:00:656</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Open article</h5>
+<span class='badge badge-success'>03.14.2024 3:19:28 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:29 PM</span>
+<span class='badge badge-default'>00:00:00:656</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=121</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Precondition: Article is deactivated from the CMS</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="122"><span class="badge log fail-bg mr-2">Fail</span>User is not able to see the content of article with status deactivated. Throws 404 message.</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given User opens the article "add deactivated article here" with status deactivated.</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then User gets message 404 not found for the deactivated article</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="129"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Top Stories category title</p>
+            <p class="text-sm">
+              <span>3:19:29 PM</span> / <span>00:00:01:811</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Top Stories category title</h5>
+<span class='badge badge-success'>03.14.2024 3:19:29 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:31 PM</span>
+<span class='badge badge-default'>00:00:01:811</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=129</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Preconditions:
+1. Category is activated from the CMS
+2. Category lead news list is activated with added articles in it</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="130"><span class="badge log pass-bg mr-2">Pass</span>User gets the title of the category listed below the main photo in main list</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.ArticleCategoryListedBelowMainPhotoSteps.user_opens_to_verify_that_the_category_title_is_listed(java.lang.String)">
+                <span>Given User opens "https://hotnews.bg/top-stories" to verify that the category title is listed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.ArticleCategoryListedBelowMainPhotoSteps.user_sees_the_category_title_underlined_is_successfully_listed_below_the_main_photo(java.lang.String)">
+                <span>And User sees the category title "Top stories" underlined is successfully listed below the main photo</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="137"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Top Stories category</p>
+            <p class="text-sm">
+              <span>3:19:31 PM</span> / <span>00:00:04:642</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Top Stories category</h5>
+<span class='badge badge-success'>03.14.2024 3:19:31 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:36 PM</span>
+<span class='badge badge-default'>00:00:04:642</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=137</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Category is activated from the CMS</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="138"><span class="badge log pass-bg mr-2">Pass</span>User is able to open category Top Stories</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.GoToTopStoriesCategorySteps.user_opens_the_following_url_to_open_top_stories_category(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/" to open Top Stories category</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.GoToTopStoriesCategorySteps.user_clicks_on_hamburger_menu()">
+                <span>And User clicks on hamburger menu</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.GoToTopStoriesCategorySteps.user_selects_top_stories_category()">
+                <span>And User selects Top Stories category</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.GoToTopStoriesCategorySteps.user_is_navigated_to_top_stories_page()">
+                <span>Then User is navigated to Top Stories page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="149"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Top Stories latest articles list</p>
+            <p class="text-sm">
+              <span>3:19:36 PM</span> / <span>00:00:11:712</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Top Stories latest articles list</h5>
+<span class='badge badge-success'>03.14.2024 3:19:36 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:47 PM</span>
+<span class='badge badge-default'>00:00:11:712</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=149</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Latest articles list is activated</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="150"><span class="badge log pass-bg mr-2">Pass</span>User is able to pick up an article from latest list with articles located under the lead news list</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.LatestNewsListTopStoriesSteps.user_opens_url_to_verify_that_the_list_with_latest_articles_is_presented(java.lang.String)">
+                <span>Given User opens url "https://hotnews.bg/top-stories" to verify that the list with latest articles is presented</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.LatestNewsListTopStoriesSteps.user_is_successfully_navigated_to_top_stories_page_and_latest_articles_list_is_successfully_listed()">
+                <span>Then User is successfully navigated to Top Stories page and latest articles list is successfully listed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="157"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">On Top Stories page "Load More" button is listed</p>
+            <p class="text-sm">
+              <span>3:19:47 PM</span> / <span>00:00:02:556</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">On Top Stories page "Load More" button is listed</h5>
+<span class='badge badge-success'>03.14.2024 3:19:47 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:50 PM</span>
+<span class='badge badge-default'>00:00:02:556</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=157</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Preconditions:
+1. Category has more than 15 articles created to generate Load More button</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="158"><span class="badge log pass-bg mr-2">Pass</span>User is able to see "Load More" button listed on the page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.LoadMoreButtonTopStoriesSteps.user_opens_url_to_see_the_view_all_button_listed_above_the_footer(java.lang.String)">
+                <span>Given User opens url "https://hotnews.bg/top-stories" to see the view all button listed above the footer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.LoadMoreButtonTopStoriesSteps.user_sees_load_more_button_listed_on_the_page()">
+                <span>And User sees Load more button listed on the page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="165"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Top Stories main list</p>
+            <p class="text-sm">
+              <span>3:19:50 PM</span> / <span>00:00:02:075</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Top Stories main list</h5>
+<span class='badge badge-success'>03.14.2024 3:19:50 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:52 PM</span>
+<span class='badge badge-default'>00:00:02:075</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=165</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Main list is activated from the CMS</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="166"><span class="badge log pass-bg mr-2">Pass</span>User is able to validate that the first article is listed</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.MainListFirstArticleTopStoriesSteps.user_opens_url_to_verify_that_the_first_article_is_listed(java.lang.String)">
+                <span>Given User opens url "https://hotnews.bg/top-stories" to verify that the first article is listed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.MainListFirstArticleTopStoriesSteps.user_is_successfully_navigated_to_top_stories_page_and_first_article_is_successfully_listed()">
+                <span>Then User is successfully navigated to Top Stories page and first article is successfully listed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="173"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Top Stories category url</p>
+            <p class="text-sm">
+              <span>3:19:52 PM</span> / <span>00:00:01:822</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Top Stories category url</h5>
+<span class='badge badge-success'>03.14.2024 3:19:52 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:54 PM</span>
+<span class='badge badge-default'>00:00:01:822</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=173</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Category is activated from the CMS</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="174"><span class="badge log pass-bg mr-2">Pass</span>User is able to open category Top Stories via url that opens current page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.ValidateCorrectURLTopStoriesSteps.user_opens_the_following_url_to_validate_the_correct_url(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/top-stories" to validate the correct URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.categoryTopStories.positiveTCs.ValidateCorrectURLTopStoriesSteps.user_is_successfully_navigated_to_top_stories_page_to_this_address(java.lang.String)">
+                <span>Then User is successfully navigated to Top Stories page to this address "https://hotnews.bg/top-stories"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="181"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Search functionality</p>
+            <p class="text-sm">
+              <span>3:19:54 PM</span> / <span>00:00:03:576</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Search functionality</h5>
+<span class='badge badge-success'>03.14.2024 3:19:54 PM</span>
+<span class='badge badge-danger'>03.14.2024 3:19:57 PM</span>
+<span class='badge badge-default'>00:00:03:576</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=181</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="182"><span class="badge log pass-bg mr-2">Pass</span>User should be able to search for an article</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.searchFunctionalityTCs.positiveTCs.SearchArticleSteps.user_has_open_the_official_web_page(java.lang.String)">
+                <span>Given User has open the official web page "https://www.hotnews.bg"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.searchFunctionalityTCs.positiveTCs.SearchArticleSteps.user_clicks_on_search_icon()">
+                <span>And User clicks on search icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.searchFunctionalityTCs.positiveTCs.SearchArticleSteps.user_enters_the_following_search_patter(java.lang.String)">
+                <span>And User enters the following search patter "Мария: Не нося сутиен от години"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.searchFunctionalityTCs.positiveTCs.SearchArticleSteps.user_clicks_on_search_icon_to_see_the_result()">
+                <span>And User clicks on search icon to see the result</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.searchFunctionalityTCs.positiveTCs.SearchArticleSteps.user_sees_a_list_with_articles_containing_the_title(java.lang.String)">
+                <span>Then User sees a list with articles containing the title "Мария: Не нося сутиен от години"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">14</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">@topStory</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@topStory</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='129' id='130'>User gets the title of the category listed below the main photo in main list</a>
+<div class="">
+<span class="badge badge-default">Top Stories category title.User gets the title of the category listed below the main photo in main list</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='137' id='138'>User is able to open category Top Stories</a>
+<div class="">
+<span class="badge badge-default">Top Stories category.User is able to open category Top Stories</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='149' id='150'>User is able to pick up an article from latest list with articles located under the lead news list</a>
+<div class="">
+<span class="badge badge-default">Top Stories latest articles list.User is able to pick up an article from latest list with articles located under the lead news list</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='157' id='158'>User is able to see "Load More" button listed on the page</a>
+<div class="">
+<span class="badge badge-default">On Top Stories page "Load More" button is listed.User is able to see "Load More" button listed on the page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='173' id='174'>User is able to open category Top Stories via url that opens current page</a>
+<div class="">
+<span class="badge badge-default">Top Stories category url.User is able to open category Top Stories via url that opens current page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@smoke</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@smoke</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='87' id='88'>Validate homepage's title</a>
+<div class="">
+<span class="badge badge-default">Homepage title.Validate homepage's title</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@footerTerms</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@footerTerms</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:18:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='12'>User opens the Terms page and gets the Title Common Terms to use web sites of sportal</a>
+<div class="">
+<span class="badge badge-default">Terms page.User opens the Terms page and gets the Title Common Terms to use web sites of sportal</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@topStory1</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@topStory1</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='165' id='166'>User is able to validate that the first article is listed</a>
+<div class="">
+<span class="badge badge-default">Top Stories main list.User is able to validate that the first article is listed</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@footerAdds</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@footerAdds</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:18:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>User opens the Adds page to validate the data in it</a>
+<div class="">
+<span class="badge badge-default">Adds page.User opens the Adds page to validate the data in it</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@footerContacts</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@footerContacts</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='23' id='24'>User opens the contacts page and takes the email listed in it</a>
+<div class="">
+<span class="badge badge-default">Contacts page.User opens the contacts page and takes the email listed in it</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@footerPrivacyPage</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@footerPrivacyPage</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='47' id='48'>User opens the Adds page to validate the data in it</a>
+<div class="">
+<span class="badge badge-default">Privacy page.User opens the Adds page to validate the data in it</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@search</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@search</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='181' id='182'>User should be able to search for an article</a>
+<div class="">
+<span class="badge badge-default">Search functionality.User should be able to search for an article</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>6</span>
+</span>
+<p class="name">@UI</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@UI</h4>
+<span status="pass" class='badge log pass-bg'>6 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='129' id='130'>User gets the title of the category listed below the main photo in main list</a>
+<div class="">
+<span class="badge badge-default">Top Stories category title.User gets the title of the category listed below the main photo in main list</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='137' id='138'>User is able to open category Top Stories</a>
+<div class="">
+<span class="badge badge-default">Top Stories category.User is able to open category Top Stories</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='149' id='150'>User is able to pick up an article from latest list with articles located under the lead news list</a>
+<div class="">
+<span class="badge badge-default">Top Stories latest articles list.User is able to pick up an article from latest list with articles located under the lead news list</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='157' id='158'>User is able to see "Load More" button listed on the page</a>
+<div class="">
+<span class="badge badge-default">On Top Stories page "Load More" button is listed.User is able to see "Load More" button listed on the page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='165' id='166'>User is able to validate that the first article is listed</a>
+<div class="">
+<span class="badge badge-default">Top Stories main list.User is able to validate that the first article is listed</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='173' id='174'>User is able to open category Top Stories via url that opens current page</a>
+<div class="">
+<span class="badge badge-default">Top Stories category url.User is able to open category Top Stories via url that opens current page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">@footer</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@footer</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:18:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>User opens the Adds page to validate the data in it</a>
+<div class="">
+<span class="badge badge-default">Adds page.User opens the Adds page to validate the data in it</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:18:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='12'>User opens the Terms page and gets the Title Common Terms to use web sites of sportal</a>
+<div class="">
+<span class="badge badge-default">Terms page.User opens the Terms page and gets the Title Common Terms to use web sites of sportal</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='23' id='24'>User opens the contacts page and takes the email listed in it</a>
+<div class="">
+<span class="badge badge-default">Contacts page.User opens the contacts page and takes the email listed in it</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='35' id='36'>User opens the Ethical page and gets the Title page</a>
+<div class="">
+<span class="badge badge-default">Ethical rules page.User opens the Ethical page and gets the Title page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='47' id='48'>User opens the Adds page to validate the data in it</a>
+<div class="">
+<span class="badge badge-default">Privacy page.User opens the Adds page to validate the data in it</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@ethicalTerms</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ethicalTerms</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='35' id='36'>User opens the Ethical page and gets the Title page</a>
+<div class="">
+<span class="badge badge-default">Ethical rules page.User opens the Ethical page and gets the Title page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@functional</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@functional</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='181' id='182'>User should be able to search for an article</a>
+<div class="">
+<span class="badge badge-default">Search functionality.User should be able to search for an article</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">@homepage</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@homepage</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='63' id='64'>User gets main list BOULEVARD</a>
+<div class="">
+<span class="badge badge-default">Homepage main list BOULEVARD.User gets main list BOULEVARD</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:16 PM</td>
+<td>
+<a href="#" class="linked" test-id='71' id='72'>User gets main list with last created articles</a>
+<div class="">
+<span class="badge badge-default">Homepage main list with last created articles.User gets main list with last created articles</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:18 PM</td>
+<td>
+<a href="#" class="linked" test-id='79' id='80'>User gets main list with 5 articles</a>
+<div class="">
+<span class="badge badge-default">Homepage main section with 5 articles is listed.User gets main list with 5 articles</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='87' id='88'>Validate homepage's title</a>
+<div class="">
+<span class="badge badge-default">Homepage title.Validate homepage's title</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='95' id='96'>User is able to use "View all" button</a>
+<div class="">
+<span class="badge badge-default">Homepage "View all" button used to return more articles.User is able to use "View all" button</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='103' id='104'>User clicks on the logo of hotNews and it's redirected to the homepage</a>
+<div class="">
+<span class="badge badge-default">Logo of hotNews is clickable on the homepage.User clicks on the logo of hotNews and it's redirected to the homepage</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='113' id='114'>User is able to use the social share component in list with articles</a>
+<div class="">
+<span class="badge badge-default">Share component with all social icons under the article.User is able to use the social share component in list with articles</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@openArticleNegative</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@openArticleNegative</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:19:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='121' id='122'>User is not able to see the content of article with status deactivated. Throws 404 message.</a>
+<div class="">
+<span class="badge badge-default">Open article.User is not able to see the content of article with status deactivated. Throws 404 message.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

@@ -75,6 +75,7 @@ public class BasePage {
 
     public void hoverAndClick(WebElement webElement) {
         Actions actions = new Actions(getDriver());
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         actions.moveToElement(webElement).click().build().perform();
     }
 
