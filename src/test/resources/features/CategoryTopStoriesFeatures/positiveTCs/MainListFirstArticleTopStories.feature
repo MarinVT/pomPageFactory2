@@ -1,4 +1,4 @@
-@topStory1 @UI
+@topStory @UI
 Feature: Top Stories main list
   Main list is activated from the CMS
 

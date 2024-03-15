@@ -34,9 +34,20 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@href='/?page=2']")
     private WebElement viewAllButtonLocator;
 
-    // Share component is visible under the article in list
+    // Share component locators
     @FindBy(className = "post_post__share__Z2_63")
-    private WebElement shareComponentLocatorUnderArticle;
+    private WebElement shareComponentMainArticleLocatorList1;
+
+    @FindBy(xpath = "/html/body/div[1]/main/div[3]/section/div/div[1]/a/div[1]/div/div/div/button")
+    private WebElement shareComponentMainArticleLocatorList2;
+
+    @FindBy(xpath = "(//img[contains(@sizes,'100vw')])[2]")
+    private WebElement getFacebookIconShareComponentLocator;
+
+    @FindBy(xpath = "(//img[@sizes='100vw'])[5]")
+    private WebElement facebookIconShareComponentLocator;
+
+    // Share component locators ENDS
 
     // Search functionality locators
     @FindBy(xpath = "//img[@src='/image/icon/search.svg?v=48&format=webp']")
@@ -55,7 +66,10 @@ public class HomePage extends BasePage {
 
     // Top stories dropdown locator
     @FindBy(xpath = "//a[@href='/top-stories'][contains(.,'Top stories')]")
-    private WebElement topStoriesDropdown;
+    private WebElement topStoriesDropdownLocator;
+
+    @FindBy(xpath = "//a[@href='/sudbi'][contains(.,'Съдби')]")
+    private WebElement sudbiDropdownLocator;
 
     // ----> Footer links locators <----
     @FindBy(linkText = "Контакти")
@@ -113,21 +127,28 @@ public class HomePage extends BasePage {
         waitElementToBeVisible(listLastCreatedArticlesLocator);
     }
 
-    // Homepage button "Share component"
+    // -----> SHARE COMPONENTS METHODS <-----
+    // Homepage button "Share component" is listed
     public void buttonViewAllListed() {
         waitElementToBeVisible(viewAllButtonLocator);
     }
 
     // Homepage "Share component" is listed
     public void shareComponentListedUnderTheArticle() {
-        waitVisibilityOfWebElement(shareComponentLocatorUnderArticle);
+        waitVisibilityOfWebElement(shareComponentMainArticleLocatorList1);
     }
+
+    // Share component navigates to Facebook page
+    public void hoverOverShareComponentMainListFirstArticle() {
+        hoverEffectOverAnElement(shareComponentMainArticleLocatorList1);
+        hoverAndClick(getFacebookIconShareComponentLocator);
+    }
+    // -----> SHARE COMPONENTS METHODS ENDS <-----
 
     // ------>  Search functionality <------
     public void clickOnSearchIcon() {
         hoverAndClick(searchIcon);
         waitElementAndClickOnIt(searchIcon);
-
 //        waitElementAndClickOnIt(searchIcon);
     }
 
@@ -158,13 +179,18 @@ public class HomePage extends BasePage {
     // Click on top stories from dropdown menu
     public void clickOnHamburgerMenu() {
         waitElementToBeVisible(hamburgerMenu);
-        waitHoverEffect(hamburgerMenu);
+        hoverEffectOverAnElement(hamburgerMenu);
         waitElementAndClickOnIt(hamburgerMenu);
     }
 
     public TopStoriesPageCategory openDropdownSelectTopStories() {
-        waitElementAndClickOnIt(topStoriesDropdown);
+        waitElementAndClickOnIt(topStoriesDropdownLocator);
         return new TopStoriesPageCategory();
+    }
+
+    public SudbiCategory openDropdownSelectSudbi() {
+        waitElementAndClickOnIt(sudbiDropdownLocator);
+        return new SudbiCategory();
     }
 
     // FOOTER METHODS NAVIGATING TO EACH PAGE - КОНТАКТИ, За Реклама, Общи условия, Етични правила, Лични данни и други

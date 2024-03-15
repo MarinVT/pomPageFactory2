@@ -67,16 +67,31 @@ public class BasePage {
         findElement.click();
     }
 
-    // Hover method using Actions
-    public void waitHoverEffect(WebElement webElement) {
+    // Hover methods using Actions
+    public void hoverEffectOverAnElement(WebElement webElement) {
         Actions actions = new Actions(getDriver());
-        actions.moveToElement(webElement).perform();
+        waitVisibilityOfWebElement(webElement);
+        actions.moveToElement(webElement);
+        actions.perform();
+    }
+
+    public void waitHoverOverElement(WebElement webElement) {
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(wait.until(ExpectedConditions.visibilityOf(webElement))).perform();
+//        waitCustomMethod(2000);
     }
 
     public void hoverAndClick(WebElement webElement) {
-        Actions actions = new Actions(getDriver());
         wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
-        actions.moveToElement(webElement).click().build().perform();
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(wait.until(ExpectedConditions.elementToBeClickable(webElement))).click().perform();
+    }
+
+    public void hoverHoldAndClickOnElement(WebElement webElement) {
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(wait.until(ExpectedConditions.visibilityOf(webElement))).clickAndHold().build().perform();
     }
 
     // SENDKEYS CUSTOM METHOD USING BY AND STRING TO BE ENTERED
@@ -125,8 +140,6 @@ public class BasePage {
         Select select = new Select(element);
         select.selectByValue(selectByValue);
     }
-
-
 
     //WRITE TEXT
     public void writeText (By elementBy, String text) {
@@ -188,6 +201,7 @@ public class BasePage {
     public void openNewTab() {
         Set<String> handles = getDriver().getWindowHandles();
         List<String> list = new ArrayList<>(handles);
+        waitCustomMethod(2000);
         String newWindow = list.get(1);
         getDriver().switchTo().window(newWindow);
     }

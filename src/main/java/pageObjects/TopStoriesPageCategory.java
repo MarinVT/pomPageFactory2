@@ -48,7 +48,7 @@ public class TopStoriesPageCategory extends BasePage {
     }
 
     public void categoryTitleIsListed() {
-        waitElementAndClickOnIt(topStoriesCategoryTitleLocator);
+        waitVisibilityOfWebElement(topStoriesCategoryTitleLocator);
     }
 
     // Validate correct Top Stories URL - https://hotnews.bg/top-stories
@@ -63,7 +63,7 @@ public class TopStoriesPageCategory extends BasePage {
 
     // Method that checks is a list with latest article is presented on the page
     public void isListLatestArticlePresented() {
-        waitElementAndClickOnIt(latestNewsListLocator);
+        waitVisibilityOfWebElement(latestNewsListLocator);
     }
 
     public void loadMoreButtonListed() {
