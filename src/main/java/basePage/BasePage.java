@@ -3,6 +3,7 @@ package basePage;
 import SeleniumDriver.DriverFactory;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -210,6 +211,14 @@ public class BasePage {
     public void scrollDown(WebElement webElement) {
         Actions actions = new Actions(getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+    }
+
+    // SCROLL DOWN ACTION TO ELEMENT
+    public void scrollDownToElement(WebElement webElement) {
+        waitVisibilityOfWebElement(webElement);
+        WheelInput.ScrollOrigin scrollOrigin = WheelInput.ScrollOrigin.fromViewport(10, 10);
+        Actions actions = new Actions(getDriver());
+        actions.scrollFromOrigin(scrollOrigin, 0, 2000).perform();
     }
 
     /*

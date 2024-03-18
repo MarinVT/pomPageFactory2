@@ -15,7 +15,7 @@
 
         <!-- defaults to https -->
 
-        <protocol>http</protocol>
+        <protocol>https</protocol>
         <!-- title of the document -->
         <documentTitle>hotNews App</documentTitle>
         <!-- report name - displayed at top-nav -->

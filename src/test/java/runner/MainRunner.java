@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@sudbi",
+        tags = "@tag1",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,
