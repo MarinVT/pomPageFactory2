@@ -17,6 +17,10 @@ public class OpenArticlePage extends BasePage {
     @FindBy(xpath = "//a[contains(.,'ергенът')]")
     private WebElement tagNameLocator;
 
+    // TITLE LOCATOR
+    @FindBy(xpath = "//h1[contains(.,'Бившият майстор на Мария Силвестър обикаля Латинска Америка')]")
+    private WebElement titleLocator;
+
     // Accept cookie button locator
     @FindBy(xpath = "//button[contains(.,'Приемам')]")
     private WebElement acceptCookieButton;
@@ -44,5 +48,9 @@ public class OpenArticlePage extends BasePage {
         waitElementAndClickOnIt(tagNameLocator);
 //        waitElementAndClickOnIt(tagLocator);
         return new TagPage();
+    }
+
+    public void getTitleOfArticle(String expectedTitle) {
+        assertEqualsByWebElementExpectedText(titleLocator, expectedTitle);
     }
 }

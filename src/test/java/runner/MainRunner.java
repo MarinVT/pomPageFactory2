@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@tag1",
+        tags = "@openArticleProps or @tag",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 18, 2024 01:53:10 PM</span></a>
+<a href="#"><span class="badge badge-primary">Mar 18, 2024 04:24:15 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,19 +66,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 18, 2024 01:53:10 PM</h3>
+<h3>Mar 18, 2024 04:24:15 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 18, 2024 01:53:16 PM</h3>
+<h3>Mar 18, 2024 04:24:30 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>3</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -101,7 +101,7 @@
 </div>
 <div class="card-footer">
 <div><small data-tooltip='100%'>
-<b>1</b> features passed
+<b>3</b> features passed
 </small>
 </div>
 <div>
@@ -123,7 +123,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>3</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -143,7 +143,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>3</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>7</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -162,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Tag finds article via its name":5.136
+"Open Article Title":4.315,"Tag finds article via its name":6.091,"Tag in open article":4.227
 };
 </script>
 <div class="row">
@@ -172,8 +172,16 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@tag1</td>
+<td>@openArticleProps</td>
 <td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@tag</td>
+<td>2</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -214,18 +222,18 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
+passParent: 3,
 failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
+passChild: 3,
 failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 3,
+passGrandChild: 7,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -250,7 +258,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@tag1</a>
+<a class="dropdown-item" href="#">@openArticleProps</a><a class="dropdown-item" href="#">@tag</a>
 </ul>
 </li>
 </ul>
@@ -261,9 +269,60 @@ eventsCount: 5,
           tag=""
           device="">
           <div class="test-detail">
+            <p class="name">Open Article Title</p>
+            <p class="text-sm">
+              <span>4:24:15 PM</span> / <span>00:00:04:315</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Open Article Title</h5>
+<span class='badge badge-success'>03.18.2024 4:24:15 PM</span>
+<span class='badge badge-danger'>03.18.2024 4:24:19 PM</span>
+<span class='badge badge-default'>00:00:04:315</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Precondition: Article's title is set to Бившият майстор на Мария Силвестър обикаля Латинска Америка</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User verifies that the title is listed in open Article</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.openArticleTCs.OpenArticleTitleSteps.user_opens_the_following_url_to_get_title(java.lang.String)">
+                <span>Given User opens the following url "https://hotnews.bg/article/2024031713215253565" to get title</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.openArticleTCs.OpenArticleTitleSteps.user_sees_the_title_listed_above_the_main_media_photo(java.lang.String)">
+                <span>And User sees the title "Бившият майстор на Мария Силвестър обикаля Латинска Америка" listed above the main media photo</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
             <p class="name">Tag finds article via its name</p>
             <p class="text-sm">
-              <span>1:53:11 PM</span> / <span>00:00:05:136</span>
+              <span>4:24:19 PM</span> / <span>00:00:06:091</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -272,10 +331,10 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Tag finds article via its name</h5>
-<span class='badge badge-success'>03.18.2024 1:53:11 PM</span>
-<span class='badge badge-danger'>03.18.2024 1:53:16 PM</span>
-<span class='badge badge-default'>00:00:05:136</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-success'>03.18.2024 4:24:19 PM</span>
+<span class='badge badge-danger'>03.18.2024 4:24:25 PM</span>
+<span class='badge badge-default'>00:00:06:091</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
@@ -287,7 +346,7 @@ Test article https://hotnews.bg/article/2024030112005165237</div>
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User is able to find article via tag name</div>
+        <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>User is able to find article via tag name</div>
       </div>
     </div>
         <div class="collapse">
@@ -313,6 +372,58 @@ Test article https://hotnews.bg/article/2024030112005165237</div>
 </div>
           </div>
         </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Tag in open article</p>
+            <p class="text-sm">
+              <span>4:24:26 PM</span> / <span>00:00:04:227</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Tag in open article</h5>
+<span class='badge badge-success'>03.18.2024 4:24:26 PM</span>
+<span class='badge badge-danger'>03.18.2024 4:24:30 PM</span>
+<span class='badge badge-default'>00:00:04:227</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Precondition: Tag is added from CMS in open article with name егенът
+Test article https://hotnews.bg/article/2024030112005165237</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="20"><span class="badge log pass-bg mr-2">Pass</span>User has tag added in open article</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.testCases.openArticleTCs.TagListedInOpenArticleSteps.user_opens_url_to_get_the_tag(java.lang.String)">
+                <span>Given User opens url "https://hotnews.bg/article/2024030112005165237" to get the TAG</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.testCases.openArticleTCs.TagListedInOpenArticleSteps.user_scrolls_down_and_tag_is_successfully_added_with_name(java.lang.String)">
+                <span>And User scrolls down and tag is successfully added with name "ергенът"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -326,7 +437,7 @@ Test article https://hotnews.bg/article/2024030112005165237</div>
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -335,12 +446,12 @@ Test article https://hotnews.bg/article/2024030112005165237</div>
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@tag1</p>
+<p class="name">@openArticleProps</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@tag1</h4>
+<h4>@openArticleProps</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -354,11 +465,57 @@ Test article https://hotnews.bg/article/2024030112005165237</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>13:53:11 PM</td>
+<td>16:24:15 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>User is able to find article via tag name</a>
+<a href="#" class="linked" test-id='1' id='2'>User verifies that the title is listed in open Article</a>
+<div class="">
+<span class="badge badge-default">Open Article Title.User verifies that the title is listed in open Article</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@tag</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@tag</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:24:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='10'>User is able to find article via tag name</a>
 <div class="">
 <span class="badge badge-default">Tag finds article via its name.User is able to find article via tag name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:24:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='19' id='20'>User has tag added in open article</a>
+<div class="">
+<span class="badge badge-default">Tag in open article.User has tag added in open article</span>
 </div>
 </td>
 </tr>

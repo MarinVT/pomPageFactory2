@@ -24,7 +24,7 @@ public class TagFindsArticlesSteps {
     }
 
     @And("User scrolls down to tag ергенът and clicks on it")
-    public void user_scrolls_down_to_tag_ергенът_and_clicks_on_it() {
+    public void user_scrolls_down_to_tag_ергенът_and_clicks_on_it() throws InterruptedException {
         openArticlePage.clickOnTagNameToOpenTagPage();
     }
 

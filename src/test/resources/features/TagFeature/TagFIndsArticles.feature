@@ -1,4 +1,4 @@
-@tag1
+@tag
 Feature: Tag finds article via its name
   Precondition: Tag is added from CMS in open article with name егенът
   Test article https://hotnews.bg/article/2024030112005165237

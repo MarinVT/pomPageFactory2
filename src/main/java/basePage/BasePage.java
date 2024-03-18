@@ -76,6 +76,14 @@ public class BasePage {
         actions.perform();
     }
 
+    // Hover method and pause for 1 second using Actions
+    public void hoverOverAnElementPause1Second(WebElement webElement) {
+        Actions actions = new Actions(getDriver());
+        waitVisibilityOfWebElement(webElement);
+        actions.moveToElement(webElement);
+        actions.pause(1000).perform();
+    }
+
     public void waitHoverOverElement(WebElement webElement) {
         wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         Actions actions = new Actions(getDriver());
