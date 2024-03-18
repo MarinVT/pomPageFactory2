@@ -15,7 +15,6 @@ import static SeleniumDriver.DriverFactory.cleanUpDriver;
 import static SeleniumDriver.DriverFactory.getDriver;
 
 public class Hooks {
-
     public WebDriver driver;
 
     @Before

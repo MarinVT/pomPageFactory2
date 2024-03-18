@@ -15,48 +15,14 @@ public class Homepage extends BasePage {
     }
 
     // Homepage locators
-    @FindBy(xpath = "//button[contains(.,'Български')]")
-    private WebElement buttonChangeLanguageDefaultBG;
 
-    // Homepage properties
-    @FindBy(id = "region")
-    private WebElement dropDownSelectRegionLocator;
+    // Main section ELEMENTS
+    @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[3]/h5")
+    private WebElement mainSectionElementsLocator;
 
-    @FindBy(id = "brand")
-    private WebElement dropDownBrandCarLocator;
     @FindBy(id = "brand")
     List <WebElement> dropDownBrandCarLocatorList;
 
-    // Search fields locator - Brand, Model, YearRegistration
-    @FindBy(id = "model")
-    private WebElement dropDownModelCarLocator;
-
-    @FindBy(xpath = "//*[@id='modification']")
-    private WebElement getDropDownModificationLocator;
-
-    @FindBy(xpath = "//button[contains(@id,'give-me-price')]")
-    private WebElement giveMePriceButtonHomepageLocator;
-
-    // Error message locator
-    @FindBy(xpath = "//p[contains(.,'Грешка:')]")
-    private WebElement errorMessageLocator;
-
-    // White header links locators
-    // Locator of About Us page on the homepage in the main section with links on the top
-    By aboutUsLinkHomepageTopOfPage = By.linkText("За Нас");
-    // Contacts Locator
-    By contactUsLinkHomepageTopOfPage = By.linkText("Контакти");
-    // Homepage logo company locator
-    By homepageLogoEcometalLTD = By.xpath("//img[@src='https://ecometal.bg/wp-content/uploads/2021/03/logo-ecometal.png']");
-
-    // Homepage phone number locator in the right upper corner
-    By homepagePhoneNumber = By.xpath("//div[@class='contact-number'][contains(.,'Позвънете Ни0885 771 777')]");
-    private @FindBy(xpath = "(//strong[contains(.,'0885 771 777')])[1]")
-    WebElement homepagePhoneNumberLocatorWebelement;
-
-
-    @FindBy(xpath = "/html/body/div[1]/header/div[3]/div/div[2]/nav/div[2]/ul/li[1]")
-    private WebElement aboutUsLinkHomepageTopOfPageWebElement;
 
 //    Page Actions
 
@@ -70,65 +36,30 @@ public class Homepage extends BasePage {
         return getDriver().getTitle();
     }
 
-    public boolean verifyDefaultLanguageIsSelected(String language) {
-        return buttonChangeLanguageDefaultBG.getText().contains(language);
+    // Checks if the main Section Elements is listed
+    public void getMainSectionElements() {
+        waitVisibilityOfWebElement(mainSectionElementsLocator);
     }
 
-    // Homepage search car input fields
-    public void selectDropdownBrandCar(String brand) {
-        selectFromDropDownByValue(dropDownBrandCarLocator,brand);
+    public ElementsPage openElementsPage() {
+        waitElementAndClickOnIt(mainSectionElementsLocator);
+
+        return new ElementsPage();
     }
 
-    public void selectDropdownModelCar(String model) {
-        selectFromDropDownByValue(dropDownModelCarLocator, model);
-    }
 
-    public void selectDropdownModification(String modification) {
-        selectFromDropDownByText(getDropDownModificationLocator, modification);
-    }
-
-    public void selectDropdownRegion(String region) {
-        selectFromDropDownByValue(dropDownSelectRegionLocator, region);
-    }
-
-    public void clickOnSubmitButton() {
-//        giveMePriceButtonHomepageLocator.click();
-        waitAndClickOnElement(giveMePriceButtonHomepageLocator);
-    }
-
-    // Takes homepage logo of the company
-    public void getHomepageCompanyLogo() {
-        waitVisibilityOfElementLocatedBy(homepageLogoEcometalLTD);
-    }
-
-    // Takes homepage phone number of the company
-    public void getHomepagePhoneNumberListed(String expectedResult) {
-        waitVisibilityOfEWebelement(homepagePhoneNumberLocatorWebelement);
-        Assert.assertEquals(homepagePhoneNumberLocatorWebelement.getText(), expectedResult);
-    }
 
     // Homepage search car input fields end part
 
     // HELPER METHODS
     // Get all values from dropdown brand and print it all - Example
-    public void getAllValuesDropDownBrand() {
-        List<String> allValues = getValues(dropDownBrandCarLocatorList, WebElement::getText);
-        List<String> getHref = getValues(dropDownBrandCarLocatorList, e -> e.getAttribute("href"));
-        List<String> getTagName = getValues(dropDownBrandCarLocatorList, WebElement::getTagName);
-        allValues.forEach(System.out::println);
-    }
+//    public void getAllValuesDropDownBrand() {
+//        List<String> allValues = getAllValuesDropDownBrand(dropDownBrandCarLocatorList, WebElement::getText);
+//        List<String> getHref = getAllValuesDropDownBrand(dropDownBrandCarLocatorList, e -> e.getAttribute("href"));
+//        List<String> getTagName = getAllValuesDropDownBrand(dropDownBrandCarLocatorList, WebElement::getTagName);
+//        allValues.forEach(System.out::println);
+//    }
 
-    // Open ABOUT US page clicking on link "За НАС"
-    public AboutUsPage openAboutUsPage() {
-        findWebElementByLocator(aboutUsLinkHomepageTopOfPage).click();
-        return new AboutUsPage();
-    }
-
-    // Open CONTACT US page clicking on link "За НАС"
-    public ContactUsPage openContactUsPage() {
-        findWebElementByLocator(contactUsLinkHomepageTopOfPage).click();
-        return new ContactUsPage();
-    }
 
 
 }

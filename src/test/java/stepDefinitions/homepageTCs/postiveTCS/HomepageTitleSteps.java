@@ -1,17 +1,14 @@
-package stepDefinitions.positiveTCsHappyPath.homepageTCs;
+package stepDefinitions.homepageTCs.postiveTCS;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import org.openqa.selenium.WebDriver;
-import pageObjects.BasePage;
 import pages.Homepage;
 
-public class HomepageSteps extends BasePage {
+public class HomepageTitleSteps {
 
-    private WebDriver driver = getDriver();
     private Homepage homepage;
 
-    public HomepageSteps(Homepage homepage) {
+    public HomepageTitleSteps(Homepage homepage) {
         this.homepage = homepage;
     }
 
@@ -22,11 +19,8 @@ public class HomepageSteps extends BasePage {
 
     @And("User gets homepage title {string}")
     public void user_gets_homepage_title(String expectedTitle) {
-//        String currentTitle = driver.getTitle();
-//        Assert.assertEquals(currentTitle, expectedTitle);
-        homepage.validateCorrectPage(expectedTitle);
+        homepage.getHomePageTitle(expectedTitle);
     }
-
 
 
 }
