@@ -12,7 +12,7 @@ public class SudbiCategory extends BasePage {
 
     String topStoriesUrl = "https://hotnews.bg/sudbi";
 
-    @FindBy(xpath = "//strong[contains(.,'Съдби')]")
+    @FindBy(xpath = "//strong[contains(.,'Съдби2')]")
     private WebElement mainTitleSudbiLocator;
 
     @FindBy(xpath = "/html/body/div[1]/main/div[4]/section/div")

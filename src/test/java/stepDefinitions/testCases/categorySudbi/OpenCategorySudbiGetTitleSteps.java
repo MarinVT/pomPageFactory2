@@ -33,9 +33,7 @@ public class OpenCategorySudbiGetTitleSteps {
 
     @Then("User is navigated to Sudbi page and sees title Sudbi {string}")
     public void user_is_navigated_to_sudbi_page_and_sees_title_sudbi(String expectedTitle) {
-        homePage.waitCustomMethod(3000);
         sudbiCategory.getMainTitleOpenCategorySudbi(expectedTitle);
-        homePage.waitCustomMethod(3000);
     }
 
 }

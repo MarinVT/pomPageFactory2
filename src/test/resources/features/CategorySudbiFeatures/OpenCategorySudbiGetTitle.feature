@@ -1,4 +1,4 @@
-@sudbi
+@sudbi1
 Feature: Sudbi category
   Category Sudbi is activated from the CMS
 
