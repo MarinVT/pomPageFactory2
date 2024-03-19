@@ -1,7 +1,7 @@
 package stepDefinitions.homepageTCs.postiveTCS;
 
 import io.cucumber.java.en.Given;
-import pages.Homepage;
+import pageObjects.Homepage;
 
 public class MainSectionElementsSteps {
 

@@ -3,8 +3,8 @@ package stepDefinitions.ElementsPageTCs.TextBoxTab.negativeTCs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.ElementsPage;
-import pages.Homepage;
+import pageObjects.ElementsPage;
+import pageObjects.Homepage;
 
 public class TextBoxFullFieldFormSteps {
 
