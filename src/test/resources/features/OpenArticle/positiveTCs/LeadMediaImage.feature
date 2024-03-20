@@ -1,4 +1,4 @@
-@openArticleProps1
+@openArticleProps
 Feature: Open Article Lead Media Image
   Precondition: Author has added image in lead media
 

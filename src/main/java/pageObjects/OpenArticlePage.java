@@ -34,6 +34,10 @@ public class OpenArticlePage extends BasePage {
         waitElementAndClickOnIt(acceptCookieButton);
     }
 
+    // SUMMARY LOCATOR
+    @FindBy(xpath = "//p[contains(.,'Майстор Влади Караджов1 не дава вида на страдащ за липсата си в новите епизоди на „Бригада Нов дом”, в които бе заместен от бившия участник във „Фермата” Калин.')]")
+    private WebElement summaryTextLocator;
+
     // VERIFIES THAT THE TAG IS LISTED ON THE PAGE IN OPEN ARTICLE
     public void tagListedInOpenArticle() {
         waitElementToBeVisible(tagLocator);
@@ -62,6 +66,11 @@ public class OpenArticlePage extends BasePage {
     // CHECKS IS THERE ANY MAIN IMAGE ADDED IN THE CONTAINER
     public void mainImageAddedInLeadMedia() {
         waitElementToBeVisible(leadMediaAddedImageLocator);
+    }
+
+    // COMAPARES THE TEXT ADDED IN THE SUMMARY FIELD
+    public void getTextSummaryField(String expectedTextSummaryField) {
+        assertEqualsByWebElementExpectedText(summaryTextLocator, expectedTextSummaryField);
     }
 
 }
