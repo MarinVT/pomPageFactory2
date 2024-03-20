@@ -3,9 +3,10 @@ package runner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
+
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@openArticleProps2",
+        tags = "@openArticleProps1",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,
@@ -13,5 +14,10 @@ import io.cucumber.testng.CucumberOptions;
 
 public class MainRunner extends AbstractTestNGCucumberTests {
 
+//    @Override
+//    @DataProvider(parallel = true)
+//    public Object[][] scenarios() {
+//        return super.scenarios();
+//    }
 }
 

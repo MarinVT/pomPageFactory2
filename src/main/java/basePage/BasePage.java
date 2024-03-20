@@ -218,7 +218,8 @@ public class BasePage {
     // SCROLL DOWN ACTION
     public void scrollDown(WebElement webElement) {
         Actions actions = new Actions(getDriver());
-        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+        actions.sendKeys(Keys.PAGE_DOWN);
+        actions.perform();
     }
 
     // SCROLL DOWN ACTION TO ELEMENT

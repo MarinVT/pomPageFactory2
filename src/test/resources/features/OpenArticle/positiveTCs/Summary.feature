@@ -1,4 +1,4 @@
-@openArticleProps2
+@openArticleProps
 Feature: Open Article Summary
   Precondition: Author has added text in summary field
 

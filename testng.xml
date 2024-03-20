@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression Full Testing" thread-count="2" data-provider-thread-count="2">
-    <!-- Test -->
-    <test name="Regression Testing" thread-count="2" parallel="instances">
+<suite name="Regression Full Testing" thread-count="5" parallel="tests">
+
+    <test thread-count="5" name="ChromeTest">
+        <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="runner.MainRunner"/>
         </classes>
     </test>
-    <!-- End Test -->
+
+<!--    <test thread-count="5" name="FirefoxTest">-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="runner.MainRunner"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
 </suite>

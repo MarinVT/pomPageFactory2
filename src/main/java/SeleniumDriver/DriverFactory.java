@@ -71,8 +71,8 @@ public class DriverFactory {
             if (System.getProperty("os.name").toLowerCase().contains("linux")) {
                 FileInputStream file = new FileInputStream("src/main/java/properties/config.properties");
                 properties.load(file);
-            } else if (System.getProperty("os.name").toLowerCase().contains("window")) {
-                FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "src/main/java/properties/config.properties");
+            } else if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+                FileInputStream file = new FileInputStream(System.getProperty("src/main/java/properties/config.properties"));
                 properties.load(file);
             }
 

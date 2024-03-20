@@ -1,6 +1,7 @@
 package pageObjects;
 
 import basePage.BasePage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -35,8 +36,16 @@ public class OpenArticlePage extends BasePage {
     }
 
     // SUMMARY LOCATOR
-    @FindBy(xpath = "//p[contains(.,'Майстор Влади Караджов1 не дава вида на страдащ за липсата си в новите епизоди на „Бригада Нов дом”, в които бе заместен от бившия участник във „Фермата” Калин.')]")
+    @FindBy(xpath = "//p[contains(.,'Майстор Влади Караджов не дава вида на страдащ за липсата си в новите епизоди на „Бригада Нов дом”, в които бе заместен от бившия участник във „Фермата” Калин.')]")
     private WebElement summaryTextLocator;
+
+    // LEAD MEDIA DESCRIPTION
+    @FindBy(xpath = "//p[contains(.,'Мария Силвестър с майстор Караджов')]")
+    private WebElement leadMediaDescriptionLocator;
+
+    // PARAGRAPH IN THE BODY OF ARTICLE
+    @FindBy(xpath = "//p[contains(.,'Караджов обиколи Латинска Америка, като редува ходенето на плаж в Коста Рика с разглеждането на забележителности като Панамския канал в едноименната държава. Бившият бригадир на Мария Силвестър е предприел далечното пътешествие по покана на известна италианска строителна компания, с която работи в момента. Екскурзията той осъществи с жена си Цветелина, с която се запозна по време на снимките на Бригадата и  манекенката Диляна Попова, която за първи път тогава показа новия си мъж, както Hotnews.bg вече писа.')]")
+    private WebElement paragraphBodyLocator;
 
     // VERIFIES THAT THE TAG IS LISTED ON THE PAGE IN OPEN ARTICLE
     public void tagListedInOpenArticle() {
@@ -68,9 +77,19 @@ public class OpenArticlePage extends BasePage {
         waitElementToBeVisible(leadMediaAddedImageLocator);
     }
 
-    // COMAPARES THE TEXT ADDED IN THE SUMMARY FIELD
+    // COMPARES THE TEXT ADDED IN THE SUMMARY FIELD
     public void getTextSummaryField(String expectedTextSummaryField) {
         assertEqualsByWebElementExpectedText(summaryTextLocator, expectedTextSummaryField);
+    }
+
+    // COMPARES THE TEXT ADDED IN PARAGRAPH
+    public void getLeadMediaDescription(String expectedLeadMediaDescription) {
+        assertEqualsByWebElementExpectedText(leadMediaDescriptionLocator, expectedLeadMediaDescription);
+    }
+
+    public void getParagraphTextInBody(String expectedParagraphText) {
+        scrollDown(paragraphBodyLocator);
+        assertEqualsByWebElementExpectedText(paragraphBodyLocator, expectedParagraphText);
     }
 
 }
