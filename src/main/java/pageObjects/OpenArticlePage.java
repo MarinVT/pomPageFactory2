@@ -25,6 +25,10 @@ public class OpenArticlePage extends BasePage {
     @FindBy(xpath = "//button[contains(.,'Приемам')]")
     private WebElement acceptCookieButton;
 
+    // Main image container locator
+    @FindBy(xpath = "//*[@id=\"__next\"]/main/div[4]/section/div/div[1]/div[2]/div[1]/div/span/img")
+    private WebElement leadMediaAddedImageLocator;
+
     // ACCEPTS COOKIE BUTTON METHOD
     public void acceptCookieButton() {
         waitElementAndClickOnIt(acceptCookieButton);
@@ -50,7 +54,14 @@ public class OpenArticlePage extends BasePage {
         return new TagPage();
     }
 
+    // CHECKS IF THE TITLE IS LISTED
     public void getTitleOfArticle(String expectedTitle) {
         assertEqualsByWebElementExpectedText(titleLocator, expectedTitle);
     }
+
+    // CHECKS IS THERE ANY MAIN IMAGE ADDED IN THE CONTAINER
+    public void mainImageAddedInLeadMedia() {
+        waitElementToBeVisible(leadMediaAddedImageLocator);
+    }
+
 }
