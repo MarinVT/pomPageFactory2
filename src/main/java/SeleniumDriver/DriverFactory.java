@@ -49,7 +49,7 @@ public class DriverFactory {
              default:
                  System.out.println("browser : " + getBrowserTypePropsFile() + " is invalid");
          }
-
+    // Test
 
          driver.manage().window().maximize();
          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
